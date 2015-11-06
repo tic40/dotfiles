@@ -31,7 +31,7 @@ SAVEHIST=1000000
 
 # ----- PROMPT -----
 ## PROMPT
-PROMPT=$'[%*]# '
+PROMPT=$'[%*]'"%F{green}${HOST}%f "
 ## RPROMPT
 RPROMPT=$'`branch-status-check` %~' # %~はpwd
 setopt prompt_subst #表示毎にPROMPTで設定されている文字列を評価する
