@@ -6,7 +6,6 @@ set runtimepath+=~/.vim/bundle/neobundle.vim
 call neobundle#begin(expand('~/.vim/bundle/'))
 	NeoBundleFetch 'Shougo/neobundle.vim'
 	"endif
-	" originalrepos on github
 	NeoBundle 'Shougo/neobundle.vim'
 	NeoBundle 'Shougo/vimproc'
 	NeoBundle 'VimClojure'
@@ -30,7 +29,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 	let g:syntastic_mode_map = {'mode': 'passive'} 
 	augroup AutoSyntastic
 		autocmd!
-		"autocmd InsertLeave,TextChanged * call s:syntastic() 
+		autocmd InsertLeave,TextChanged * call s:syntastic()
 	augroup END
 	function! s:syntastic()
 		w
@@ -48,8 +47,6 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 	let g:indent_guides_guide_size = 1
 
 call neobundle#end()
-
-
 
 filetype plugin indent on
 filetype indent on
