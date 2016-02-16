@@ -12,7 +12,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 	NeoBundle 'Shougo/vimshell'
 	NeoBundle 'Shougo/unite.vim'
 	NeoBundle 'Shougo/neocomplcache'
-	NeoBundle 'Shougo/neosnippet'
+	NeoBundle 'Shougo/neosnippet-snippets'
 	NeoBundle 'jpalardy/vim-slime'
 
 	NeoBundle 'mattn/emmet-vim'
@@ -56,9 +56,14 @@ syntax on
 set encoding=utf-8
 set fileencoding=utf-8
 
+set fileformat=unix
+
 "tab
-set tabstop=4
-set shiftwidth=4
+set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set textwidth=0
 
 "encoding
 set encoding=utf-8
