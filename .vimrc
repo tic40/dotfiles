@@ -29,7 +29,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 	let g:syntastic_mode_map = {'mode': 'passive'} 
 	augroup AutoSyntastic
 		autocmd!
-		autocmd InsertLeave,TextChanged * call s:syntastic()
+		"autocmd InsertLeave,TextChanged * call s:syntastic()
 	augroup END
 	function! s:syntastic()
 		w
@@ -55,13 +55,12 @@ syntax on
 "encoding
 set encoding=utf-8
 set fileencoding=utf-8
-
 set fileformat=unix
 
 "tab
 set expandtab
-set tabstop=2
-set softtabstop=2
+set tabstop=4
+set softtabstop=4
 set shiftwidth=2
 set textwidth=0
 
@@ -127,9 +126,9 @@ if has("autocmd")
 	\ endif
 endif
 
-augroup PHP
-	autocmd!
-	autocmd FileType php set makeprg=php\ -l\ %
-	" php -lの構文チェックでエラーがなければ「No syntax errors」の一行だけ出力される
-	autocmd BufWritePost *.php silent make | if len(getqflist()) != 1 | copen | else | cclose | endif
-augroup END
+"augroup PHP
+"	autocmd!
+"	autocmd FileType php set makeprg=php\ -l\ %
+"	" php -lの構文チェックでエラーがなければ「No syntax errors」の一行だけ出力される
+"	autocmd BufWritePost *.php silent make | if len(getqflist()) != 1 | copen | else | cclose | endif
+"augroup END
