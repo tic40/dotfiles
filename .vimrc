@@ -2,6 +2,13 @@ set nocompatible
 filetype off
 
 "if has('vim_starting')
+"" how to install
+"" cd ~/.vim/bundle
+"" $ mkdir -p ~/.vim/bundle
+"" $ git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+"" $ git clone git://github.com/toyamarinyon/vim-swift.git
+"" in vim -> :NeoBundleInstall
+
 set runtimepath+=~/.vim/bundle/neobundle.vim
 call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundleFetch 'Shougo/neobundle.vim'
@@ -20,6 +27,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundle 'hail2u/vim-css3-syntax'
     NeoBundle 'taichouchou2/vim-javascript'
     NeoBundle 'kchmck/vim-coffee-script'
+    NeoBundle 'toyamarinyon/vim-swift'
 
     " ファイルをtree表示してくれる
     NeoBundle 'scrooloose/nerdtree'
