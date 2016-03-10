@@ -64,6 +64,7 @@ syntax on
 set encoding=utf-8
 set fileencoding=utf-8
 set fileformat=unix
+set binary noeol
 
 "tab
 set expandtab
@@ -71,12 +72,6 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set textwidth=0
-
-"encoding
-set encoding=utf-8
-
-"colorTheme
-colorschem murphy
 
 "backup
 set nobackup
