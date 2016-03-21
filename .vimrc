@@ -1,7 +1,3 @@
-"" install vim plug
-"curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-"    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
 call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
@@ -33,7 +29,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
     let g:syntastic_enable_signs=1
     let g:syntastic_auto_loc_list=2
-    let g:syntastic_mode_map = {'mode': 'passive'} 
+    let g:syntastic_mode_map = {'mode': 'passive'}
     augroup AutoSyntastic
         autocmd!
         "autocmd InsertLeave,TextChanged * call s:syntastic()
@@ -183,8 +179,6 @@ set vb t_vb=
 set novisualbell
 " OSのクリップボードを使う
 set clipboard=unnamed,autoselect
-" 不可視文字を表示
-set list
 " 右下に表示される行・列の番号を表示する
 set ruler
 " compatibleオプションをオフにする
@@ -224,7 +218,7 @@ set smartindent
 " カラー設定
 set t_Co=256
 set background=dark
-    "colorscheme solarized
+colorscheme murphy
     "let g:solarized_termcolors=256
     "set listchars=eol:¬,tab:▸\
 " タイトルをウィンドウ枠に表示
@@ -256,8 +250,8 @@ set mouse=a
 set ttymouse=xterm2
 " コマンドを画面最下部に表示する
 set showcmd
-"タブ、空白、改行の可視化
-"set list
+"タブ、空白、改行の不可視文字の可視化
+    "set list
 set listchars=tab:>-,extends:<,trail:-
 "show number/ruler
 set ruler
