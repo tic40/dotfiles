@@ -251,8 +251,8 @@ set wildmode=list:longest
 " 最後尾まで検索を終えたら次の検索で先頭に移る
 set wrapscan
 " マウス対応
-set mouse=a
-set ttymouse=xterm2
+    "set mouse=a
+    "set ttymouse=xterm2
 " コマンドを画面最下部に表示する
 set showcmd
 "タブ、空白、改行の不可視文字の可視化
