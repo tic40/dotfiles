@@ -1,6 +1,7 @@
 ""install vim plug
-"curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+"$ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 "    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"in vim -> :PlugInstall
 
 call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
@@ -214,7 +215,7 @@ set smartcase
 " インクリメンタルサーチを行う
 set incsearch
 " 検索結果をハイライト表示
-:set hlsearch
+set hlsearch
 " 行頭の余白内で Tab を打ち込むとshiftwidthの数だけインデントする
 set smarttab
 " autoindentと同様だがC構文を認識
@@ -239,7 +240,7 @@ set laststatus=2
 " メッセージ表示欄
 set cmdheight=2
 " 置換の時 g オプションをデフォルトで有効にする
-set gdefault
+"set gdefault
 " カーソルが何行目の何列目に置かれているかを表示する
 set ruler
 " コマンドを画面下に表示させる
