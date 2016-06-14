@@ -85,13 +85,10 @@ setopt auto_cd
 
 # default directory
 
-# 以下Alias
-
 # alias command
 alias vi='vim'
 alias lla='ls -al'
 alias cl='clear'
-alias osver='cat /etc/redhat-release'
 alias diff='colordiff'
 alias ls='ls -G'
 alias ll='ls -G'
