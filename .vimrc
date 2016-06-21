@@ -1,3 +1,3 @@
 " include vim partials
-set runtimepath+={$HOGE}/.vim/
+set runtimepath+={$HOME}/.vim/
 runtime! vim_partials/*.vim
