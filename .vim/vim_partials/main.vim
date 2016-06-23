@@ -107,9 +107,6 @@ set laststatus=2
 " メッセージ表示欄
 set cmdheight=2
 
-" 置換の時 g オプションをデフォルトで有効にする
-set gdefault
-
 " カーソルが何行目の何列目に置かれているかを表示する
 set ruler
 
@@ -121,10 +118,6 @@ set wildmenu
 set wildmode=list:longest
 " 最後尾まで検索を終えたら次の検索で先頭に移る
 set wrapscan
-
-" マウス対応
-set mouse=a
-set ttymouse=xterm2
 
 " コマンドを画面最下部に表示する
 set showcmd
