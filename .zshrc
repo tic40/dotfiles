@@ -1,4 +1,3 @@
-# include *.zsh files in .zsh_partials
 ZSHHOME="${HOME}/.zsh_partials"
 if [ -d $ZSHHOME -a -r $ZSHHOME -a \
      -x $ZSHHOME ]; then
