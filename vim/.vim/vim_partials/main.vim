@@ -127,3 +127,6 @@ set listchars=tab:>-,extends:<,trail:-
 
 " paste
 set paste
+
+" delete white speace end of line when save the file
+autocmd BufWritePre * :%s/\s\+$//ge
