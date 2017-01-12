@@ -1,10 +1,3 @@
-"tab rules
-set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set textwidth=0
-
 " syntax
 syntax enable
 
@@ -125,8 +118,15 @@ set showcmd
 "タブ、空白、改行の不可視文字の可視化
 set listchars=tab:>-,extends:<,trail:-
 
-" paste
-set paste
-
 " delete white speace end of line when save the file
 autocmd BufWritePre * :%s/\s\+$//ge
+
+"tab rules
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set textwidth=0
+set expandtab
+
+" paste
+set paste
