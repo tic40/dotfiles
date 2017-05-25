@@ -71,7 +71,7 @@ Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'honza/vim-snippets'
 " Markdownプラグイン
-Plug 'plasticboy/vim-markdown'
+"Plug 'plasticboy/vim-markdown'
 " Rubyプラグイン
 Plug 'vim-ruby/vim-ruby'
 Plug 'kana/vim-textobj-user'

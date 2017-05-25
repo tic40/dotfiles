@@ -37,23 +37,23 @@ setopt prompt_subst #表示毎にPROMPTで設定されている文字列を評�
 # @see https://wiki.archlinux.org/index.php/zsh
 autoload -U colors; colors
 function branch-status-check {
-	local prefix branchname suffix
-		# .gitの中だから除外
-		if [[ "$PWD" =~ '/\.git(/.*)?$' ]]; then
-			return
-		fi
-		branchname=`get-branch-name`
-		# ブランチ名が無いので除外
-		if [[ -z $branchname ]]; then
-			return
-		fi
-		prefix=`get-branch-status` #色だけ返ってくる
-		suffix='%{'${reset_color}'%}'
-		echo ${prefix}${branchname}${suffix}
+    local prefix branchname suffix
+        # .gitの中だから除外
+        if [[ "$PWD" =~ '/\.git(/.*)?$' ]]; then
+            return
+        fi
+        branchname=`get-branch-name`
+        # ブランチ名が無いので除外
+        if [[ -z $branchname ]]; then
+            return
+        fi
+        prefix=`get-branch-status` #色だけ返ってくる
+        suffix='%{'${reset_color}'%}'
+        echo ${prefix}${branchname}${suffix}
 }
 function get-branch-name {
-	# gitディレクトリじゃない場合のエラーは捨てる
-	echo `git rev-parse --abbrev-ref HEAD 2> /dev/null`
+    # gitディレクトリじゃない場合のエラーは捨てる
+    echo `git rev-parse --abbrev-ref HEAD 2> /dev/null`
 }
 function get-branch-status {
     local res color
