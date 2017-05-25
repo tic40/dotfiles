@@ -1,16 +1,21 @@
 [user]
-	name = 
-	email = 
+    name =
+    email =
 [alias]
-	st = status
-	co = checkout
-	br = branch
-	up = rebase
-	ci = commit
-	df = diff --color
-	dfc = diff --color-words
+    st = status
+    co = checkout
+    br = branch
+    brr = branch -r
+    fe = fetch -p
+    up = rebase
+    ci = commit
+    cim = commit -m
+    lone = log --oneline
+    df = diff --color
+    dfc = diff --color-words
+    confl = config -l
 [core]
-	editor = vim
-	whitespace = cr-at-eol
+    editor = vim
+    whitespace = cr-at-eol
 [color]
-	ui = true
+    ui = true
