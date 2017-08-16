@@ -1,11 +1,9 @@
 PROMPT=$'[%*]'"%F{green}${HOST}%f "
 ## RPROMPT
 RPROMPT=$'`branch-status-check` %~' # %~はpwd
-setopt prompt_subst #表示毎にPROMPTで設定されている文字列を評価する
+# 表示毎にPROMPTで設定されている文字列を評価する
+setopt prompt_subst
 
-# {{{ methods for RPROMPT
-# fg[color]表記と$reset_colorを使いたい
-# @see https://wiki.archlinux.org/index.php/zsh
 autoload -U colors; colors
 function branch-status-check {
     local prefix branchname suffix
@@ -18,36 +16,7 @@ function branch-status-check {
         if [[ -z $branchname ]]; then
             return
         fi
-        prefix=`get-branch-status` #色だけ返ってくる
-        suffix='%{'${reset_color}'%}'
-        echo ${prefix}${branchname}${suffix}
-}
-function get-branch-name {
-    # gitディレクトリじゃない場合のエラーは捨てる
-    echo `git rev-parse --abbrev-ref HEAD 2> /dev/null`
-}
-
-PROMPT=$'[%*]'"%F{green}${HOST}%f "
-## RPROMPT
-RPROMPT=$'`branch-status-check` %~' # %~はpwd
-setopt prompt_subst #表示毎にPROMPTで設定されている文字列を評価する
-
-# {{{ methods for RPROMPT
-# fg[color]表記と$reset_colorを使いたい
-# @see https://wiki.archlinux.org/index.php/zsh
-autoload -U colors; colors
-function branch-status-check {
-    local prefix branchname suffix
-        # .gitの中だから除外
-        if [[ "$PWD" =~ '/\.git(/.*)?$' ]]; then
-            return
-        fi
-        branchname=`get-branch-name`
-        # ブランチ名が無いので除外
-        if [[ -z $branchname ]]; then
-            return
-        fi
-        prefix=`get-branch-status` #色だけ返ってくる
+        prefix=`get-branch-status`
         suffix='%{'${reset_color}'%}'
         echo ${prefix}${branchname}${suffix}
 }
