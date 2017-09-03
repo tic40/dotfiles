@@ -153,4 +153,6 @@ Plug 'basyura/twibill.vim'
 Plug 'basyura/TweetVim'
 " Slackプラグイン
 Plug 'heavenshell/vim-slack'
+" Vim syntax highlighting
+Plug 'posva/vim-vue'
 call plug#end()
