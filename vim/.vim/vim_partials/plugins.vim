@@ -155,4 +155,6 @@ Plug 'basyura/TweetVim'
 Plug 'heavenshell/vim-slack'
 " Vim syntax highlighting
 Plug 'posva/vim-vue'
+" typescript syntax highlight
+Plug 'leafgarland/typescript-vim'
 call plug#end()
