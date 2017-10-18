@@ -125,8 +125,8 @@ autocmd BufWritePre * :%s/\s\+$//ge
 set paste
 
 "tab rules
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set textwidth=0
 set expandtab

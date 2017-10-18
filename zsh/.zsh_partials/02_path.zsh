@@ -1,1 +1,1 @@
-PATH="$PATH":~/.composer/vendor/bin/
+#PATH="$PATH":~/.composer/vendor/bin/
