@@ -1,3 +1,6 @@
+# default directory
+# cd /home
+
 # alias command
 alias vi='vim'
 alias cl='clear'

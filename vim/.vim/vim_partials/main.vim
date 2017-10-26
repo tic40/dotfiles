@@ -121,12 +121,12 @@ set listchars=tab:>-,extends:<,trail:-
 " delete white speace end of line when save the file
 autocmd BufWritePre * :%s/\s\+$//ge
 
-" indent
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set textwidth=0
-set expandtab
-
 " paste
 set paste
+
+"tab rules
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set textwidth=0
+set expandtab

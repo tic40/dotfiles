@@ -1,6 +1,6 @@
 "" install vim plug
 "curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-"    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 "" install plugins command in vim
 " :PlugInstall
@@ -34,26 +34,26 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'toyamarinyon/vim-swift'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
-    let g:syntastic_enable_signs=1
-    let g:syntastic_auto_loc_list=2
-    let g:syntastic_mode_map = {'mode': 'passive'}
-    augroup AutoSyntastic
-        autocmd!
-        "autocmd InsertLeave,TextChanged * call s:syntastic()
-    augroup END
-    function! s:syntastic()
-        w
-        SyntasticCheck
-    endfunction
+  let g:syntastic_enable_signs=1
+  let g:syntastic_auto_loc_list=2
+  let g:syntastic_mode_map = {'mode': 'passive'}
+  augroup AutoSyntastic
+    autocmd!
+    "autocmd InsertLeave,TextChanged * call s:syntastic()
+  augroup END
+  function! s:syntastic()
+    w
+    SyntasticCheck
+  endfunction
 " インデントに色を付けて見やすくする
 Plug 'nathanaelkane/vim-indent-guides'
-    let g:indent_guides_enable_on_vim_startup=1
-    let g:indent_guides_start_level=1
-    let g:indent_guides_auto_colors=0
-    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=14
-    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=3
-    let g:indent_guides_color_change_percent = 30
-    let g:indent_guides_guide_size = 1
+  let g:indent_guides_enable_on_vim_startup=1
+  let g:indent_guides_start_level=1
+  let g:indent_guides_auto_colors=0
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=14
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=3
+  let g:indent_guides_color_change_percent = 30
+  let g:indent_guides_guide_size = 1
 " Vim非同期処理ライブラリ
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 " コーディング中のプログラムをvimから起動
