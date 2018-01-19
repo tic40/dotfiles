@@ -13,7 +13,6 @@
   cm = commit -m
   df = diff --color
   dfc = diff --color-words
-  lone = log --oneline
   l = log --date=short --pretty=format:'%C(yellow)%h %Cgreen%cd %Cblue%cn %Creset%s'
   ll = log --stat --decorate=short --pretty=format:'%C(yellow)%h %Cgreen%cr %Cblue%cn%Cred%d %Creset%s %C(cyan)%b'
   lg = log --graph --date=short --decorate=short --pretty=format:'%C(yellow)%h %Cgreen%cd %Cblue%cn%Cred%d %Creset%s'
@@ -23,7 +22,7 @@
   rsh = reset --soft HEAD
   rh = reset --hard
   rhh = reset --hard HEAD
-  rl = reflog show -n 20
+  rl = reflog show
   conf = config --list
   info = remote show origin
   ls = ls-files
