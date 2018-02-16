@@ -1,6 +1,5 @@
 "" install vim plug
-"curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-"  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 "" install plugins command in vim
 " :PlugInstall
@@ -25,7 +24,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Unmanaged plugin (manually installed and updated)
 Plug '~/my-prototype-plugin'
 " Add plugins to &runtimepath
-Plug 'VimClojure'
 Plug 'jpalardy/vim-slime'
 Plug 'mattn/emmet-vim'
 Plug 'tell-k/vim-browsereload-mac'
@@ -91,7 +89,7 @@ Plug 'tell-k/vim-browsereload-mac'
 " Pythonプラグイン
 Plug 'davidhalter/jedi-vim'
 " Goプラグイン
-Plug 'fatih/vim-go'
+"Plug 'fatih/vim-go'
 " JSONプラグイン
 Plug 'leshill/vim-json'
 " Angular.jsプラグイン
