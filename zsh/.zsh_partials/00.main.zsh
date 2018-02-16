@@ -28,3 +28,7 @@ setopt print_eight_bit
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
+
+if [[ -s ~/.nvm/nvm.sh ]]; then
+  source ~/.nvm/nvm.sh
+fi
