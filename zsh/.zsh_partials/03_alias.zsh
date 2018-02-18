@@ -9,3 +9,5 @@ alias ls='ls -G'
 alias ll='ls -alG'
 #alias ls='ls --color'
 #alias ll='ls -al --color'
+
+alias repo='cd ~/repo'
