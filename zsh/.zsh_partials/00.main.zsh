@@ -29,6 +29,10 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
 
+# for nvm
 if [[ -s ~/.nvm/nvm.sh ]]; then
   source ~/.nvm/nvm.sh
 fi
+
+# for rbvenv
+eval "$(rbenv init -)"
