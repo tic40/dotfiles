@@ -1,9 +1,3 @@
-"" install vim plug
-"curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-"" install plugins command in vim
-" :PlugInstall
-
 call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
@@ -68,8 +62,6 @@ Plug 'moll/vim-node'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'honza/vim-snippets'
-" Markdownプラグイン
-"Plug 'plasticboy/vim-markdown'
 " Rubyプラグイン
 Plug 'vim-ruby/vim-ruby'
 Plug 'kana/vim-textobj-user'
@@ -100,8 +92,6 @@ Plug 'shougo/neocomplete.vim'
 Plug 'derekwyatt/vim-scala'
 " Swiftプラグイン
 Plug 'keith/swift.vim'
-" WordPressプラグイン
-Plug 'dsawardekar/wordpress.vim'
 " CSVプラグイン
 Plug 'chrisbra/csv.vim'
 " HTML5プラグイン
@@ -136,21 +126,12 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 " R言語用プラグイン
 Plug 'vim-scripts/Vim-R-plugin'
-" Hive用プラグイン
-Plug 'autowitch/hive.vim'
 " インデントに色をつける
 Plug 'nathanaelkane/vim-indent-guides'
 " 末尾の空白対策
 Plug 'bronson/vim-trailing-whitespace'
 " PHP補完用
 Plug 'violetyk/neocomplete-php.vim'
-" Gmailプラグイン
-Plug 'yuratomo/gmail.vim'
-" Twitterプラグイン
-Plug 'basyura/twibill.vim'
-Plug 'basyura/TweetVim'
-" Slackプラグイン
-Plug 'heavenshell/vim-slack'
 " Vim syntax highlighting
 Plug 'posva/vim-vue'
 " typescript syntax highlight

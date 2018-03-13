@@ -1,4 +1,4 @@
-"全角スペースをハイライト表示
+" 全角スペースをハイライト表示
 function! ZenkakuSpace()
   highlight ZenkakuSpace cterm=reverse ctermfg=DarkMagenta gui=reverse guifg=DarkMagenta
 endfunction
