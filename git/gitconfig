@@ -41,3 +41,5 @@
   ui = true
 [merge]
   ff = false
+[pull]
+  ff = only
