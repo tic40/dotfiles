@@ -11,6 +11,7 @@
   fe = fetch -p
   c = commit
   cm = commit -m
+  cme = commit --allow-empty -m
   df = diff --color
   dfc = diff --color-words
   l = log --date=short --pretty=format:'%C(yellow)%h %Cgreen%cd %Cblue%cn %Creset%s'
