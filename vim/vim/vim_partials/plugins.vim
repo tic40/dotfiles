@@ -1,6 +1,5 @@
 call plug#begin('~/.vim/plugged')
-" Unmanaged plugin (manually installed and updated)
-Plug '~/my-prototype-plugin'
+
 " インデントに色を付けて見やすくする
 Plug 'nathanaelkane/vim-indent-guides'
   let g:indent_guides_enable_on_vim_startup=1
@@ -11,23 +10,18 @@ Plug 'nathanaelkane/vim-indent-guides'
   let g:indent_guides_color_change_percent = 30
   let g:indent_guides_guide_size = 1
 
-" On-demand loading
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-" Using a non-master branch
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+" Unmanaged plugin (manually installed and updated)
+Plug '~/my-prototype-plugin'
 " Vim非同期処理ライブラリ
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-" スニペット
+" snippet
+Plug 'Shougo/neocomplcache'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
-Plug 'honza/vim-snippets'
-" emmet
-Plug 'mattn/emmet-vim'
-" ブラウザを開く
-Plug 'tyru/open-browser.vim'
 " 入力補完
 Plug 'shougo/neocomplete.vim'
+" emmet
+Plug 'mattn/emmet-vim'
 " HTMLハイライト
 Plug 'gregsexton/matchtag'
 " HTML5
@@ -42,7 +36,7 @@ Plug 'tpope/vim-bundler'
 Plug 'stanangeloff/php.vim'
 " Python
 Plug 'davidhalter/jedi-vim'
-" Go
+" Go lang
 Plug 'fatih/vim-go'
 " Node.js
 Plug 'moll/vim-node'
@@ -71,7 +65,7 @@ Plug 'chrisbra/csv.vim'
 " GitHub
 Plug 'junegunn/vim-github-dashboard'
 Plug 'mattn/gist-vim'
-" R言語
+" R lang
 Plug 'vim-scripts/Vim-R-plugin'
 " ソースコードを実行
 Plug 'thinca/vim-quickrun'
