@@ -1,5 +1,7 @@
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.vim/bundle')
 
+" Unmanaged plugin (manually installed and updated)
+Plug '~/my-prototype-plugin'
 " インデントに色を付けて見やすくする
 Plug 'nathanaelkane/vim-indent-guides'
   let g:indent_guides_enable_on_vim_startup=1
@@ -10,16 +12,23 @@ Plug 'nathanaelkane/vim-indent-guides'
   let g:indent_guides_color_change_percent = 30
   let g:indent_guides_guide_size = 1
 
-" Unmanaged plugin (manually installed and updated)
-Plug '~/my-prototype-plugin'
 " Vim非同期処理ライブラリ
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-" snippet
-Plug 'Shougo/neocomplcache'
+" スニペット
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 " 入力補完
 Plug 'shougo/neocomplete.vim'
+  let g:neocomplete#enable_at_startup = 1
+  " enter keyで補完候補確定
+  imap <expr><CR> neosnippet#expandable() ? "<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "<C-y>" : "<CR>"
+  " tab keyで補完候補選択
+  imap <expr><TAB> pumvisible() ? "<C-n>" : neosnippet#jumpable() ? "<Plug>(neosnippet_expand_or_jump)" : "<TAB>"
+  " For conceal markers.
+  if has('conceal')
+    set conceallevel=2 concealcursor=niv
+  endif
+
 " emmet
 Plug 'mattn/emmet-vim'
 " HTMLハイライト
@@ -35,8 +44,8 @@ Plug 'tpope/vim-bundler'
 " PHP
 Plug 'stanangeloff/php.vim'
 " Python
-Plug 'davidhalter/jedi-vim'
-" Go lang
+"Plug 'davidhalter/jedi-vim'
+" Go
 Plug 'fatih/vim-go'
 " Node.js
 Plug 'moll/vim-node'
@@ -65,7 +74,7 @@ Plug 'chrisbra/csv.vim'
 " GitHub
 Plug 'junegunn/vim-github-dashboard'
 Plug 'mattn/gist-vim'
-" R lang
+" R言語
 Plug 'vim-scripts/Vim-R-plugin'
 " ソースコードを実行
 Plug 'thinca/vim-quickrun'

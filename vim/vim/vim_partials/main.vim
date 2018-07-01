@@ -122,7 +122,7 @@ set listchars=tab:>-,extends:<,trail:-
 autocmd BufWritePre * :%s/\s\+$//ge
 
 " paste
-set paste
+"set paste
 
 "tab rules
 set tabstop=2
