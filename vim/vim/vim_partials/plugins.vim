@@ -24,6 +24,7 @@ Plug 'shougo/neocomplete.vim'
   imap <expr><CR> neosnippet#expandable() ? "<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "<C-y>" : "<CR>"
   " tab keyで補完候補選択
   imap <expr><TAB> pumvisible() ? "<C-n>" : neosnippet#jumpable() ? "<Plug>(neosnippet_expand_or_jump)" : "<TAB>"
+
   " For conceal markers.
   if has('conceal')
     set conceallevel=2 concealcursor=niv
@@ -53,8 +54,6 @@ Plug 'moll/vim-node'
 Plug 'leshill/vim-json'
 " JavaScript
 Plug 'pangloss/vim-javascript'
-" JavaScript Syntaxチェック
-Plug 'jelera/vim-javascript-syntax'
 " Vuejs
 Plug 'posva/vim-vue'
 " Typescript
