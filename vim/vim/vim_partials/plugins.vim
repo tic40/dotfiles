@@ -2,7 +2,7 @@ call plug#begin('~/.vim/bundle')
 
 " Unmanaged plugin (manually installed and updated)
 Plug '~/my-prototype-plugin'
-" インデントに色を付けて見やすくする
+" indent color
 Plug 'nathanaelkane/vim-indent-guides'
   let g:indent_guides_enable_on_vim_startup=1
   let g:indent_guides_start_level=1
@@ -12,27 +12,7 @@ Plug 'nathanaelkane/vim-indent-guides'
   let g:indent_guides_color_change_percent = 30
   let g:indent_guides_guide_size = 1
 
-" Vim非同期処理ライブラリ
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-" スニペット
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
-" 入力補完
-Plug 'shougo/neocomplete.vim'
-  let g:neocomplete#enable_at_startup = 1
-  " enter keyで補完候補確定
-  imap <expr><CR> neosnippet#expandable() ? "<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "<C-y>" : "<CR>"
-  " tab keyで補完候補選択
-  imap <expr><TAB> pumvisible() ? "<C-n>" : neosnippet#jumpable() ? "<Plug>(neosnippet_expand_or_jump)" : "<TAB>"
-
-  " For conceal markers.
-  if has('conceal')
-    set conceallevel=2 concealcursor=niv
-  endif
-
-" emmet
-Plug 'mattn/emmet-vim'
-" HTMLハイライト
+" HTML highlight
 Plug 'gregsexton/matchtag'
 " HTML5
 Plug 'othree/html5.vim'
@@ -45,7 +25,7 @@ Plug 'tpope/vim-bundler'
 " PHP
 Plug 'stanangeloff/php.vim'
 " Python
-"Plug 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim'
 " Go
 Plug 'fatih/vim-go'
 " Node.js
@@ -73,17 +53,29 @@ Plug 'chrisbra/csv.vim'
 " GitHub
 Plug 'junegunn/vim-github-dashboard'
 Plug 'mattn/gist-vim'
-" R言語
+" R lang
 Plug 'vim-scripts/Vim-R-plugin'
-" ソースコードを実行
+" Emmet
+Plug 'mattn/emmet-vim'
+" snippet
+"Plug 'Shougo/neosnippet'
+"Plug 'Shougo/neosnippet-snippets'
+" input completion
+Plug 'shougo/neocomplete.vim'
+" run soucecode
 Plug 'thinca/vim-quickrun'
-" ステータスライン・タブライン
+" status line
 Plug 'itchyny/lightline.vim'
 " git操作
 Plug 'tpope/vim-fugitive'
-" インデントに色をつける
-Plug 'nathanaelkane/vim-indent-guides'
-" 末尾の空白対策
+" delete empty whitespace
 Plug 'bronson/vim-trailing-whitespace'
+" NERDTree
+Plug 'scrooloose/nerdtree'
+  map <C-o> :NERDTreeToggle<CR>
+" fzf
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+  map ; :Files<CR>
 
 call plug#end()
