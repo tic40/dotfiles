@@ -1,0 +1,48 @@
+# zplug
+source ~/.zplug/init.zsh
+
+# zplug "themes/agnoster", from:oh-my-zsh
+zplug "themes/clean", from:oh-my-zsh
+
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-history-substring-search"
+zplug "b4b4r07/enhancd", use:"init.sh"
+
+# zplug "sindresorhus/pure"
+# zplug "chrissicool/zsh-256color"
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+  printf "Install? [y/N]: "
+  if read -q; then
+    echo; zplug install
+  fi
+fi
+zplug load
+
+# 例： /usr/bin と入力すると /usr/bin ディレクトリに移動
+setopt auto_cd
+setopt auto_pushd
+setopt correct
+
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias vi='vim'
+alias cl='clear'
+alias diff='colordiff'
+alias ls='ls -G'
+alias ll='ls -alG'
+#alias ls='ls --color'
+#alias ll='ls -al --color'
+
+# for nvm
+if [[ -s ~/.nvm/nvm.sh ]]; then
+  source ~/.nvm/nvm.sh
+fi
+
+# for rbvenv
+eval "$(rbenv init -)"
