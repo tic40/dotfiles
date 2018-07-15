@@ -10,8 +10,8 @@ zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "b4b4r07/enhancd", use:"init.sh"
 
-# zplug "sindresorhus/pure"
 # zplug "chrissicool/zsh-256color"
+# zplug "sindresorhus/pure"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -22,15 +22,22 @@ if ! zplug check --verbose; then
 fi
 zplug load
 
-# 例： /usr/bin と入力すると /usr/bin ディレクトリに移動
+# completion
 setopt auto_cd
 setopt auto_pushd
 setopt correct
-
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# color
+autoload -Uz colors
+colors
+
+# history
+HISTFILE=~/.zsh_history
+HISTSIZE=1000000
+SAVEHIST=1000000
+
+# alias
 alias vi='vim'
 alias cl='clear'
 alias diff='colordiff'
@@ -38,6 +45,7 @@ alias ls='ls -G'
 alias ll='ls -alG'
 #alias ls='ls --color'
 #alias ll='ls -al --color'
+alias repo='cd ~/'
 
 # for nvm
 if [[ -s ~/.nvm/nvm.sh ]]; then
