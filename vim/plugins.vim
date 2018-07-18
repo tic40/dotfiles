@@ -31,7 +31,7 @@ Plug 'fatih/vim-go'
 " Node.js
 Plug 'moll/vim-node'
 " JSON
-Plug 'leshill/vim-json'
+Plug 'elzr/vim-json'
 " JavaScript
 Plug 'pangloss/vim-javascript'
 " Vuejs
@@ -44,30 +44,18 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'hail2u/vim-css3-syntax'
 " Angular.js
 Plug 'burnettk/vim-angular'
-" Scala
-Plug 'derekwyatt/vim-scala'
-" Swift
-Plug 'keith/swift.vim'
 " CSV
 Plug 'chrisbra/csv.vim'
 " GitHub
-Plug 'junegunn/vim-github-dashboard'
-Plug 'mattn/gist-vim'
-" R lang
-Plug 'vim-scripts/Vim-R-plugin'
+Plug 'tpope/vim-fugitive'
 " Emmet
 Plug 'mattn/emmet-vim'
-" snippet
-"Plug 'Shougo/neosnippet'
-"Plug 'Shougo/neosnippet-snippets'
 " input completion
 Plug 'shougo/neocomplete.vim'
 " run soucecode
 Plug 'thinca/vim-quickrun'
 " status line
 Plug 'itchyny/lightline.vim'
-" git操作
-Plug 'tpope/vim-fugitive'
 " delete empty whitespace
 Plug 'bronson/vim-trailing-whitespace'
 " NERDTree

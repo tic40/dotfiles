@@ -1,3 +1,5 @@
 " include vim partials
 set runtimepath+={$HOME}/.vim/
-runtime! vim_partials/*.vim
+runtime! main.vim
+runtime! functions.vim
+runtime! plugins.vim
