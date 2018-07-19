@@ -130,3 +130,11 @@ set softtabstop=2
 set shiftwidth=2
 set textwidth=0
 set expandtab
+
+" remember last cursor position
+if has("autocmd")
+  autocmd BufReadPost *
+  \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+  \   exe "normal! g'\"" |
+  \ endif
+endif

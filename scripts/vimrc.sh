@@ -2,8 +2,7 @@
 cd `dirname $0`
 
 cp ../vim/vimrc ~/.vimrc
-cp ../vim/functions.vim ~/.vim/
-cp ../vim/main.vim ~/.vim/
+cp ../vim/config.vim ~/.vim/
 cp ../vim/plugins.vim ~/.vim/
 
 # install vim-plug
