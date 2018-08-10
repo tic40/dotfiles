@@ -30,8 +30,6 @@ Plug 'davidhalter/jedi-vim'
 Plug 'fatih/vim-go'
 " Node.js
 Plug 'moll/vim-node'
-" JSON
-Plug 'elzr/vim-json'
 " JavaScript
 Plug 'pangloss/vim-javascript'
 " Vuejs
