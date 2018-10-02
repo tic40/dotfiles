@@ -30,16 +30,23 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
 
-# alias
+# aliases
 alias vi='vim'
-alias cl='clear'
+alias c='clear'
 alias diff='colordiff'
 alias ls='ls -G'
 alias ll='ls -alG'
 #alias ls='ls --color'
 #alias ll='ls -al --color'
-
 alias repo='cd ~/'
+
+alias untar='tar -zxvf'
+alias getpass='openssl rand -base64 20'
+alias sha='shasum -a 256'
+alias ping='ping -c 5'
+alias www='python -m SimpleHTTPServer 8000'
+alias ipe='curl ipinfo.io/ip'
+alias ipi='ipconfig getifaddr NIC'
 
 # for nvm
 if [[ -s ~/.nvm/nvm.sh ]]; then
