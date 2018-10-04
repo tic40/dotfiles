@@ -47,6 +47,9 @@ alias ping='ping -c 5'
 alias www='python -m SimpleHTTPServer 8000'
 alias ipe='curl ipinfo.io/ip'
 alias ipi='ipconfig getifaddr NIC'
+alias char100='for i in {1..100}; do echo -n 'a'; done'
+alias big10='du -sh ./* | sort -nr | head -n 10'
+alias vimlast='ls -tr | tail -n 1 | xargs -o vim'
 
 # for nvm
 if [[ -s ~/.nvm/nvm.sh ]]; then
