@@ -39,6 +39,7 @@ alias ll='ls -alGh'
 #alias ls='ls --color'
 #alias ll='ls -al --color'
 alias repo='cd ~/'
+alias gcc14='g++ -std=c++14'
 
 alias untar='tar -zxvf'
 alias getpass='openssl rand -base64 20'
