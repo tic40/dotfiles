@@ -42,15 +42,18 @@ alias repo='cd ~/'
 alias gcc14='g++ -std=c++14'
 
 alias untar='tar -zxvf'
+alias wget='wget -c'
 alias getpass='openssl rand -base64 20'
 alias sha='shasum -a 256'
 alias ping='ping -c 5'
 alias www='python -m SimpleHTTPServer 8000'
+alias speed='speedtest-cli --server 2406 --simple'
 alias ipe='curl ipinfo.io/ip'
 alias ipi='ipconfig getifaddr NIC'
 alias char100='for i in {1..100}; do echo -n 'a'; done'
 alias big10='du -sh ./* | sort -nr | head -n 10'
 alias vimlast='ls -tr | tail -n 1 | xargs -o vim'
+alias cformat='clang-format -style=file -i'
 
 # for nvm
 if [[ -s ~/.nvm/nvm.sh ]]; then
