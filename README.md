@@ -3,7 +3,7 @@
 ## install
 
 ```
-$ ./install.sh
+$ ./setup.sh
 ```
 
 ## setup
