@@ -50,10 +50,11 @@ alias www='python -m SimpleHTTPServer 8000'
 alias speed='speedtest-cli --server 2406 --simple'
 alias ipe='curl ipinfo.io/ip'
 alias ipi='ipconfig getifaddr NIC'
-alias char100='for i in {1..100}; do echo -n 'a'; done'
 alias big10='du -sh ./* | sort -nr | head -n 10'
 alias vimlast='ls -tr | tail -n 1 | xargs -o vim'
 alias cformat='clang-format -style=file -i'
+alias char100='for i in {1..100}; do echo -n 'a'; done'
+alias fizzbuzz='for i in {1..100}; do ([ $((i%15)) = 0 ] && echo 'fizzbuzz') || ([ $((i%3)) = 0 ] && echo 'fizz') || ([ $((i%5)) = 0 ] && echo 'buzz') || echo $i; done'
 
 # for nvm
 if [[ -s ~/.nvm/nvm.sh ]]; then
