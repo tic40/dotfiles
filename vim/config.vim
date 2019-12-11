@@ -77,10 +77,11 @@ set smarttab
 " autoindentと同様だがC構文を認識
 set smartindent
 
-" カラー設定
-set t_Co=256
-set background=dark
+" color
 colorscheme murphy
+
+" cursorline
+set cursorline
 
 " タイトルをウィンドウ枠に表示
 set title
