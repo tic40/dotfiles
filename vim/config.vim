@@ -42,12 +42,12 @@ set nocompatible
 " 移動コマンドを使ったとき、行頭に移動しない
 set nostartofline
 
-" 対応括弧に<と>のペアを追加
-set matchpairs& matchpairs+=<:>
-
 " 対応括弧
 set showmatch
 set matchtime=1
+
+" 対応括弧に<と>のペアを追加
+set matchpairs& matchpairs+=<:>
 
 " ウィンドウの幅より長い行は折り返され、次の行に続けて表示される
 set wrap
