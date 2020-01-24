@@ -6,6 +6,13 @@ set encoding=UTF-8
 set fileencoding=UTF-8
 set termencoding=UTF-8
 
+"tab rules
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set textwidth=0
+set expandtab
+
 " スクロールする時に下が見えるようにする
 set scrolloff=5
 
@@ -38,11 +45,9 @@ set nostartofline
 " 対応括弧に<と>のペアを追加
 set matchpairs& matchpairs+=<:>
 
-" 対応括弧をハイライト表示する
+" 対応括弧
 set showmatch
-
-" 対応括弧の表示秒数を3秒にする
-set matchtime=3
+set matchtime=1
 
 " ウィンドウの幅より長い行は折り返され、次の行に続けて表示される
 set wrap
@@ -59,17 +64,14 @@ set hidden
 " 新しく開く代わりにすでに開いてあるバッファを開く
 set switchbuf=useopen
 
-" 小文字の検索でも大文字も見つかるようにする
+" search
+set incsearch
+set hlsearch
 set ignorecase
-
-" ただし大文字も含めた検索の場合はその通りに検索する
 set smartcase
 
-" インクリメンタルサーチを行う
-set incsearch
-
-" 検索結果をハイライト表示
-set hlsearch
+" 最後尾まで検索を終えたら次の検索で先頭に移る
+set wrapscan
 
 " 行頭の余白内で Tab を打ち込むとshiftwidthの数だけインデントする
 set smarttab
@@ -80,12 +82,8 @@ set smartindent
 " color
 colorscheme murphy
 
-" cursorline
-set cursorline
-
 " タイトルをウィンドウ枠に表示
 set title
-set undolevels=300
 
 " コマンド・検索パターンの履歴
 set history=10000
@@ -101,17 +99,9 @@ set laststatus=2
 " メッセージ表示欄
 set cmdheight=2
 
-" カーソルが何行目の何列目に置かれているかを表示する
-set ruler
-
-" コマンドを画面下に表示させる
-set showcmd
-
 " タブ補完
 set wildmenu
 set wildmode=list:longest
-" 最後尾まで検索を終えたら次の検索で先頭に移る
-set wrapscan
 
 " コマンドを画面最下部に表示する
 set showcmd
@@ -121,16 +111,6 @@ set listchars=tab:>-,extends:<,trail:-
 
 " delete white speace end of line when save the file
 autocmd BufWritePre * :%s/\s\+$//ge
-
-" paste
-"set paste
-
-"tab rules
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set textwidth=0
-set expandtab
 
 " remember last cursor position
 if has("autocmd")
