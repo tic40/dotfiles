@@ -32,7 +32,8 @@
   lsd = ls-files --deleted
   c-rank = shortlog -sn --no-merges
   c-rank-month = shortlog -sn --no-merges --after='date +%Y/%m/01' --before='date +%Y/%m/%d'
-  # remove all deleted files: git rm `git ls-files --deleted`
+  rmall = "!git rm `git ls-files --deleted` " # remove all deleted file
+
 [core]
   excludesfile = ~/.gitignore_global
   autocrlf = false
