@@ -2,37 +2,39 @@
   name = tic40
   email = ccpzjoh@gmail.com
 [alias]
-  st = status
+  br = branch
+  bra = branch -a
+  brr = branch -r
+  c = commit
+  c-rank = shortlog -sn --no-merges
+  c-rank-month = shortlog -sn --no-merges --after='date +%Y/%m/01' --before='date +%Y/%m/%d'
+  cm = commit -m
+  cma = commit --amend
+  cme = commit --allow-empty -m
   co = checkout
   cob = checkout -b
-  br = branch
-  brr = branch -r
-  bra = branch -a
-  fe = fetch -p
-  c = commit
-  cm = commit -m
-  cme = commit --allow-empty -m
+  conf = config --list
   df = diff --color
   dfc = diff --color-words
+  fe = fetch -p
+  info = remote show origin
   l = log --date=short --pretty=format:'%C(yellow)%h %Cgreen%cd %Cblue%cn %Creset%s'
-  ll = log --stat --decorate=short --pretty=format:'%C(yellow)%h %Cgreen%cr %Cblue%cn%Cred%d %Creset%s %C(cyan)%b'
   lg = log --graph --date=short --decorate=short --pretty=format:'%C(yellow)%h %Cgreen%cd %Cblue%cn%Cred%d %Creset%s'
+  ll = log --stat --decorate=short --pretty=format:'%C(yellow)%h %Cgreen%cr %Cblue%cn%Cred%d %Creset%s %C(cyan)%b'
   lm = log --merges --pretty=format:'%C(yellow)%h %Cgreen%ci %Cblue%cn%Cred%d %Creset%s %C(cyan)%b'
   lone = log --oneline
+  ls = ls-files
+  lsd = ls-files --deleted
+  lsm = ls-files --modified
+  pushf = push --force-with-lease
   r = reset
-  rs = reset --soft
-  rsh = reset --soft HEAD
   rh = reset --hard
   rhh = reset --hard HEAD
   rl = reflog show
-  conf = config --list
-  info = remote show origin
-  ls = ls-files
-  lsm = ls-files --modified
-  lsd = ls-files --deleted
-  c-rank = shortlog -sn --no-merges
-  c-rank-month = shortlog -sn --no-merges --after='date +%Y/%m/01' --before='date +%Y/%m/%d'
   rmall = "!git rm `git ls-files --deleted` " # remove all deleted file
+  rs = reset --soft
+  rsh = reset --soft HEAD
+  st = status
 
 [core]
   excludesfile = ~/.gitignore_global
