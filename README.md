@@ -6,9 +6,11 @@
 $ ./setup.sh
 ```
 
-## setup
+- Put SSH secret key for GitHub to ~/.ssh/
 
-after install
+```
+$ cd yoursshkey ~/.ssh/
+```
 
 - install plugins for vim
 
@@ -17,10 +19,3 @@ $ vim
 :PlugInstall
 ```
 
-- set your account info for git
-
-```
-$ vim ~/.gitconfig
-name = your name
-email = your email
-```
