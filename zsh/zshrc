@@ -41,6 +41,8 @@ alias ll='ls -alGh'
 alias repo='cd ~/'
 alias gcc14='g++ -std=gnu++1y -o a.out'
 alias gcc14e='g++ -std=gnu++1y -o a.out main.cpp && ./a.out'
+alias gcc17='g++ -std=gnu++17 -Wall -Wextra -O2 main.cpp'
+alias gcc17e='g++ -std=gnu++17 -Wall -Wextra -O2 main.cpp && ./a.out'
 
 alias untar='tar -zxvf'
 alias wget='wget -c'
