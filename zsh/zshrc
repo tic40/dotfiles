@@ -58,6 +58,9 @@ alias vimlast='ls -tr | tail -n 1 | xargs -o vim'
 alias cformat='clang-format -style=file -i'
 alias char100='for i in {1..100}; do echo -n 'a'; done'
 alias fizzbuzz='for i in {1..100}; do ([ $((i%15)) = 0 ] && echo 'fizzbuzz') || ([ $((i%3)) = 0 ] && echo 'fizz') || ([ $((i%5)) = 0 ] && echo 'buzz') || echo $i; done'
+alias dsize='dh -sh ./*'
+alias wcnt='wc -m'
+alias ggrep='git grep'
 
 # for nvm
 if [[ -s ~/.nvm/nvm.sh ]]; then
