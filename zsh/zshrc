@@ -63,9 +63,8 @@ alias wcnt='wc -m'
 alias ggrep='git grep'
 
 # for nvm
-if [[ -s ~/.nvm/nvm.sh ]]; then
-  source ~/.nvm/nvm.sh
-fi
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 # for rbvenv
 eval "$(rbenv init -)"
