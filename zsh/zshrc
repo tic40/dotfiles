@@ -38,11 +38,11 @@ alias ls='ls -G'
 alias ll='ls -alGh'
 #alias ls='ls --color'
 #alias ll='ls -al --color'
-alias repo='cd ~/'
-alias gcc17='g++ -std=gnu++17 -Wall -Wextra -O2 main.cpp'
-alias gcc17e='g++ -std=gnu++17 -Wall -Wextra -O2 main.cpp && ./a.out'
-alias gcc17ac='g++ -std=gnu++17 -I /path/to/ac-library -Wall -Wextra -O2 main.cpp'
-alias gcc17ace='g++ -std=gnu++17 -I /path/to/ac-library -Wall -Wextra -O2 main.cpp && ./a.out'
+alias repo='cd ~/Documents/repo'
+alias tic40='cd ~/Documents/repo/tic40'
+alias gcce='g++ -std=gnu++2b -O2 -Wall -Wextra main.cpp && ./a.out'
+alias gccac='g++ -std=gnu++2b -O2 -I /Users/tic40/Documents/repo/tic40/atcoder/libraries/ac-library -Wall -Wextra main.cpp'
+alias gccace='g++ -std=gnu++2b -O2 -I /Users/tic40/Documents/repo/tic40/atcoder/libraries/ac-library -Wall -Wextra -ld_classic main.cpp && ./a.out'
 
 alias untar='tar -zxvf'
 alias wget='wget -c'
@@ -70,3 +70,4 @@ source $(brew --prefix nvm)/nvm.sh
 eval "$(rbenv init -)"
 
 export LC_ALL=en_US.UTF-8
+export PATH=/opt/homebrew/bin:$PATH
