@@ -28,6 +28,7 @@
   lsm = ls-files --modified
   pushf = push --force-with-lease
   r = reset
+  re = restore
   rh = reset --hard
   rhh = reset --hard HEAD
   rl = reflog show
@@ -35,6 +36,7 @@
   rs = reset --soft
   rsh = reset --soft HEAD
   st = status
+  sw = switch
 
 [core]
   excludesfile = ~/.gitignore_global
