@@ -33,7 +33,6 @@ SAVEHIST=1000000
 # aliases
 alias vi='vim'
 alias c='clear'
-alias diff='colordiff'
 alias ls='ls -G'
 alias ll='ls -alGh'
 #alias ls='ls --color'
@@ -62,7 +61,7 @@ alias dsize='dh -sh ./*'
 alias wcnt='wc -m'
 alias ggrep='git grep'
 
-# Downloads ディレクトリの test ファイルをカレントディレクトリに移動する
+# Downloads の test\d ファイルをカレントディレクトリに移動する
 movetest() {
   find ~/Downloads -type f -name 'test*' -maxdepth 1 | grep -E 'test\d$' | awk '{print $1 " ./"}' | xargs -n 2 mv
 }
@@ -80,3 +79,11 @@ eval "$(rbenv init -)"
 
 export LC_ALL=en_US.UTF-8
 export PATH=/opt/homebrew/bin:$PATH
+
+# pnpm
+export PNPM_HOME="/Users/tic40/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
