@@ -3,6 +3,7 @@
   email = ccpzjoh@gmail.com
 [alias]
   br = branch
+  brc = branch --show-current
   bra = branch -a
   brr = branch -r
   c = commit
@@ -37,7 +38,6 @@
   rsh = reset --soft HEAD
   st = status
   sw = switch
-
 [core]
   excludesfile = ~/.gitignore_global
   autocrlf = false
