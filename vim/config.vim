@@ -53,7 +53,7 @@ set imsearch=0
 set imdisable
 
 " Color scheme
-colorscheme murphy
+colorscheme zaibatsu
 
 " Remove trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
