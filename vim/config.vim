@@ -21,7 +21,7 @@ set nobackup
 set backspace=indent,eol,start
 
 "OSのクリップボードを使う
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 "右下に表示される行・列の番号を表示する
 set ruler
@@ -32,8 +32,6 @@ set nostartofline
 "対応括弧
 set showmatch
 set matchtime=1
-
-"対応括弧に<と>のペアを追加
 set matchpairs+=<:>
 
 "ウィンドウの幅より長い行は折り返され、次の行に続けて表示される
@@ -64,9 +62,6 @@ colorscheme murphy
 set title
 set titlestring=%F%m%r%h%w
 
-"コマンド・検索パターンの履歴
-set history=10000
-
 "IME設定
 set iminsert=0
 set imsearch=0
@@ -95,4 +90,3 @@ if has("autocmd")
   \   exe "normal! g'\"" |
   \ endif
 endif
-

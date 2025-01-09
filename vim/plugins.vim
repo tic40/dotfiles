@@ -37,4 +37,3 @@ Plug 'junegunn/fzf.vim'
   map ; :Files<CR>
 
 call plug#end()
-
