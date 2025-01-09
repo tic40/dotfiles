@@ -1,6 +1,10 @@
 " Enable syntax highlighting
 syntax enable
 
+" Color scheme
+set t_u7=
+colorscheme zaibatsu
+
 " File encoding
 set fileencoding=utf-8
 
@@ -51,9 +55,6 @@ set nobackup
 set iminsert=0
 set imsearch=0
 set imdisable
-
-" Color scheme
-colorscheme zaibatsu
 
 " Remove trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
