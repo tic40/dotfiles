@@ -1,21 +1,16 @@
 # zplug
 source ~/.zplug/init.zsh
 
-# zplug "themes/agnoster", from:oh-my-zsh
 zplug "themes/clean", from:oh-my-zsh
-
 zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-syntax-highlighting"
 zplug "b4b4r07/enhancd", use:"init.sh"
 
 # Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-  printf "Install? [y/N]: "
-  if read -q; then
-    echo; zplug install
-  fi
+if ! zplug check; then
+  zplug install
 fi
 zplug load
 
@@ -27,8 +22,8 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # history
 HISTFILE=~/.zsh_history
-HISTSIZE=1000000
-SAVEHIST=1000000
+HISTSIZE=10000
+SAVEHIST=10000
 
 # aliases
 alias vi='vim'
@@ -57,7 +52,7 @@ alias vimlast='ls -tr | tail -n 1 | xargs -o vim'
 alias cformat='clang-format -style=file -i'
 alias char100='for i in {1..100}; do echo -n 'a'; done'
 alias fizzbuzz='for i in {1..100}; do ([ $((i%15)) = 0 ] && echo 'fizzbuzz') || ([ $((i%3)) = 0 ] && echo 'fizz') || ([ $((i%5)) = 0 ] && echo 'buzz') || echo $i; done'
-alias dsize='dh -sh ./*'
+alias dsize='du -sh ./*'
 alias wcnt='wc -m'
 alias ggrep='git grep'
 
@@ -70,20 +65,12 @@ mkcd() {
   mkdir $* && cd $_
 }
 
-# for nvm
+# nvm
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
-# for rbvenv
+# rbenv
 eval "$(rbenv init -)"
 
 export LC_ALL=en_US.UTF-8
 export PATH=/opt/homebrew/bin:$PATH
-
-# pnpm
-export PNPM_HOME="/Users/tic40/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
