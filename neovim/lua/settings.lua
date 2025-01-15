@@ -1,51 +1,60 @@
 -- File encoding
-vim.o.fileencoding = "utf-8"
+vim.opt.fileencoding = "utf-8"
 
 -- Tab and indentation rules
-vim.o.tabstop = 2
-vim.o.shiftwidth = 2
-vim.o.softtabstop = 2
-vim.o.shiftround = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftround = true
+vim.opt.expandtab = true
 
 -- Scrolling and navigation
-vim.o.scrolloff = 3
-vim.o.backspace = "indent,eol,start"
-vim.o.clipboard = "unnamedplus"
-vim.o.hidden = true
-vim.o.switchbuf = "useopen"
-vim.o.startofline = false
+vim.opt.scrolloff = 3
+vim.opt.sidescrolloff = 5
+vim.opt.backspace = { "indent", "eol", "start" }
+vim.opt.clipboard = "unnamedplus"
+vim.opt.hidden = true
+vim.opt.switchbuf = "useopen"
+vim.opt.startofline = false
 
 -- Search behavior
-vim.o.incsearch = true
-vim.o.hlsearch = true
-vim.o.ignorecase = true
-vim.o.smartcase = true
+vim.opt.incsearch = true
+vim.opt.hlsearch = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 -- UI enhancements
-vim.o.ruler = true
-vim.o.showcmd = true
-vim.o.listchars = "tab:»·,trail:·,extends:❯,precedes:❮,nbsp:␣,eol:↲"
-vim.o.wildmenu = true
-vim.o.wildmode = "list:longest"
-vim.o.laststatus = 2
-vim.o.title = true
-vim.o.titlestring = "%F%m%r%h%w"
+vim.opt.ruler = true
+vim.opt.showcmd = true
+vim.opt.listchars = {
+  tab = "»·",
+  trail = "·",
+  extends = "❯",
+  precedes = "❮",
+  nbsp = "␣",
+  eol = "↲",
+}
+vim.opt.wildmenu = true
+vim.opt.wildmode = { "list", "longest" }
+vim.opt.laststatus = 2
+vim.opt.title = true
+vim.opt.titlestring = "%F%m%r%h%w"
 
 -- Bracket matching
-vim.o.showmatch = true
-vim.o.matchtime = 1
-vim.o.matchpairs = vim.o.matchpairs .. ",<:>"
+vim.opt.showmatch = true
+vim.opt.matchtime = 1
+vim.opt.matchpairs:append("<:>")
 
 -- Line wrapping
-vim.o.wrap = true
+vim.opt.wrap = true
 
 -- Disable swap and backup files
-vim.o.swapfile = false
-vim.o.backup = false
+vim.opt.swapfile = false
+vim.opt.backup = false
 
 -- IME settings
-vim.o.iminsert = 0
-vim.o.imsearch = 0
+vim.opt.iminsert = 0
+vim.opt.imsearch = 0
 
 -- Remove trailing whitespace on save
 vim.api.nvim_create_autocmd("BufWritePre", {
