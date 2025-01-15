@@ -1,6 +1,8 @@
+syntax enable
+
 " Color scheme
 set t_u7=
-colorscheme zaibatsu
+colorscheme vscode
 
 " File encoding
 set fileencoding=utf-8
@@ -15,7 +17,7 @@ set shiftround
 " Scrolling and navigation
 set scrolloff=3
 set backspace=indent,eol,start
-set clipboard=unnamed
+set clipboard+=unnamedplus
 set hidden
 set switchbuf=useopen
 set nostartofline
