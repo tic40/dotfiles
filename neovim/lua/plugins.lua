@@ -33,15 +33,15 @@ return {
     end,
   },
 
-	-- Delete empty whitespace
-	{
-		"ntpeters/vim-better-whitespace",
-	},
+  -- Delete empty whitespace
+  {
+    "ntpeters/vim-better-whitespace",
+  },
 
-	-- Git
-	{
-		"tpope/vim-fugitive",
-	},
+  -- Git
+  {
+    "tpope/vim-fugitive",
+  },
 
   -- LSP Configuration
   {
