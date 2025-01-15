@@ -26,14 +26,15 @@ HISTSIZE=10000
 SAVEHIST=10000
 
 # aliases
-alias vi='vim'
+alias vi='nvim'
+alias vim='nvim'
 alias c='clear'
 alias ls='ls -G'
 alias ll='ls -alGh'
-#alias ls='ls --color'
-#alias ll='ls -al --color'
 alias repo='cd ~/Documents/repo'
 alias tic40='cd ~/Documents/repo/tic40'
+alias atcoder='cd ~/Documents/repo/tic40/atcoder'
+alias dotfiles='cd ~/Documents/repo/tic40/dotfiles'
 alias gcce='g++ -std=gnu++2b -O2 -Wall -Wextra -ld_classic main.cpp && ./a.out'
 alias gccac='g++ -std=gnu++2b -O2 -Wall -Wextra -ld_classic -I /Users/tic40/Documents/repo/tic40/atcoder/libraries/ac-library main.cpp'
 alias gccace='g++ -std=gnu++2b -O2 -Wall -Wextra -ld_classic -I /Users/tic40/Documents/repo/tic40/atcoder/libraries/ac-library main.cpp && ./a.out'

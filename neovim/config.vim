@@ -1,6 +1,3 @@
-" Enable syntax highlighting
-syntax enable
-
 " Color scheme
 set t_u7=
 colorscheme zaibatsu
