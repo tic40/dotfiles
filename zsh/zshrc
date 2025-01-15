@@ -33,7 +33,7 @@ alias ls='ls -G'
 alias ll='ls -alGh'
 alias repo='cd ~/Documents/repo'
 alias tic40='cd ~/Documents/repo/tic40'
-alias atcoder='cd ~/Documents/repo/tic40/atcoder'
+alias atc='cd ~/Documents/repo/tic40/atcoder'
 alias dotfiles='cd ~/Documents/repo/tic40/dotfiles'
 alias gcce='g++ -std=gnu++2b -O2 -Wall -Wextra -ld_classic main.cpp && ./a.out'
 alias gccac='g++ -std=gnu++2b -O2 -Wall -Wextra -ld_classic -I /Users/tic40/Documents/repo/tic40/atcoder/libraries/ac-library main.cpp'
@@ -62,9 +62,7 @@ movetest() {
   find ~/Downloads -type f -name 'test*' -maxdepth 1 | grep -E 'test\d$' | awk '{print $1 " ./"}' | xargs -n 2 mv
 }
 
-mkcd() {
-  mkdir $* && cd $_
-}
+mkcd() { mkdir $* && cd $_ }
 
 # nvm
 export NVM_DIR=~/.nvm

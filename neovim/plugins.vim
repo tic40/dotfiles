@@ -1,5 +1,5 @@
 " Directory for plugins
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.config/nvim/bundle')
 
 " Theme
 Plug 'Mofiqul/vscode.nvim'
@@ -15,6 +15,11 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lua/plenary.nvim' " Required dependency for Telescope
 
 " Input completion (modern completion plugin)
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 
 " Indent blankline
@@ -32,5 +37,24 @@ Plug 'tpope/vim-fugitive'
 call plug#end()
 
 lua << EOF
-require("ibl").setup()
+  require('lualine').setup()
+  require('ibl').setup()
+  require('nvim-tree').setup()
+  vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+
+  local cmp = require('cmp')
+
+  cmp.setup({
+    snippet = {
+      expand = function(args)
+        require('luasnip').lsp_expand(args.body)
+      end,
+    },
+    sources = cmp.config.sources({
+      { name = 'nvim_lsp' },
+      { name = 'luasnip' },
+      { name = 'buffer' },
+      { name = 'path' },
+    }),
+  })
 EOF
