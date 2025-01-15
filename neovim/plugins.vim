@@ -25,7 +25,6 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'kana/vim-textobj-user'
 Plug 'rhysd/vim-textobj-ruby'
 Plug 'tpope/vim-rails'
-Plug 'tpope/vim-bundler'
 
 " Git
 Plug 'tpope/vim-fugitive'
