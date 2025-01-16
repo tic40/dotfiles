@@ -28,12 +28,15 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
+
 setopt hist_ignore_dups
 setopt hist_ignore_space
 setopt share_history
 
 # aliases
 REPO="~/Documents/repo"
+GCCAC="g++ -std=gnu++2b -O2 -Wall -Wextra -ld_classic -I ${REPO}/tic40/atcoder/libraries/ac-library main.cpp"
+
 alias vi='nvim'
 alias vim='nvim'
 alias ls='ls -G'
@@ -42,9 +45,8 @@ alias repo="cd ${REPO}"
 alias tic40="cd ${REPO}/tic40"
 alias atc="cd ${REPO}/tic40/atcoder"
 alias dotfiles="cd ${REPO}/tic40/dotfiles"
-alias gcce="g++ -std=gnu++2b -O2 -Wall -Wextra -ld_classic main.cpp && ./a.out"
-alias gccac="g++ -std=gnu++2b -O2 -Wall -Wextra -ld_classic -I ${REPO}/tic40/atcoder/libraries/ac-library main.cpp"
-alias gccace="g++ -std=gnu++2b -O2 -Wall -Wextra -ld_classic -I ${REPO}/tic40/atcoder/libraries/ac-library main.cpp && ./a.out"
+alias gccac="${GCCAC}"
+alias gccace="${GCCAC} && ./a.out"
 alias runtest="${REPO}/tic40/atcoder/scripts/runTest.sh"
 
 alias untar='tar -zxvf'
