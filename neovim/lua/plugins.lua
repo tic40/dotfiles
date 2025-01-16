@@ -3,9 +3,28 @@ return {
   {
     "Mofiqul/vscode.nvim",
     config = function()
-      vim.o.termguicolors = true
-      vim.cmd("colorscheme vscode")
+      if not vim.g.vscode then
+        vim.o.termguicolors = true
+        vim.cmd("colorscheme vscode")
+      end
     end,
+  },
+
+  -- Syntax highlight
+  {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    config = function()
+      require'nvim-treesitter.configs'.setup {
+        ensure_installed = {"vim", "dockerfile", "typescript", "tsx", "javascript", "json", "lua", "bash", "markdown", "css", "scss", "yaml", "vue", "php", "html", "cpp", "ruby", "python"},
+        highlight = {
+          enable = true,
+        },
+        indent = {
+          enable = true,
+        },
+      }
+    end
   },
 
   -- Lualine
