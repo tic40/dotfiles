@@ -74,12 +74,11 @@ movetest() {
 
 mkcd() { mkdir $* && cd $_ }
 
-# nvm
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-
 # rbenv
 eval "$(rbenv init -)"
+# nodenv
+eval "$(nodenv init - zsh)"
+export PATH="$HOME/.nodenv/bin:$PATH"
 
 export LC_ALL=en_US.UTF-8
 export PATH=/opt/homebrew/bin:$PATH
