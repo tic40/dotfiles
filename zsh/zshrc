@@ -49,6 +49,10 @@ alias gccac="${GCCAC}"
 alias gccace="${GCCAC} && ./a.out"
 alias runtest="${REPO}/tic40/atcoder/scripts/runTest.sh"
 
+alias poc-note="cd ${REPO}/pocake/note"
+alias poc-notef="cd ${REPO}/pocake/note-front"
+alias poc-notef2="cd ${REPO}/pocake/frontend"
+
 alias untar='tar -zxvf'
 alias wget='wget -c'
 alias getpass='openssl rand -base64 20'
