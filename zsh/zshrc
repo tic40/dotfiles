@@ -79,7 +79,7 @@ movetest() {
 mkcd() { mkdir $* && cd $_ }
 
 # brew
-export PATH=/opt/homebrew/bin:$PATH
+export PATH="/opt/homebrew/bin:$PATH"
 # rbenv
 eval "$(rbenv init -)"
 # nodenv
