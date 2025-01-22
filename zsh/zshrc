@@ -21,7 +21,7 @@ zplug load
 # completion
 setopt auto_cd
 setopt auto_pushd
-setopt correct_all
+setopt correct
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # history
