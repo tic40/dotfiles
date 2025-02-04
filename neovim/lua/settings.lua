@@ -1,6 +1,9 @@
 -- File encoding
 vim.opt.fileencoding = "utf-8"
 
+-- line number
+vim.opt.number = true
+
 -- Tab and indentation rules
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
