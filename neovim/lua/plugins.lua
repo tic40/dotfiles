@@ -52,11 +52,6 @@ return {
     end,
   },
 
-  -- Delete empty whitespace
-  {
-    "ntpeters/vim-better-whitespace",
-  },
-
   -- Git
   {
     "tpope/vim-fugitive",
