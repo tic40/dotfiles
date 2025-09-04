@@ -71,7 +71,7 @@ alias dsize='du -sh ./*'
 alias wcnt='wc -m'
 alias ggrep='git grep'
 
-# move ~/Downloads/test\d files to current directory
+# Downloads の test\d ファイルをカレントディレクトリに移動する
 movetest() {
   find ~/Downloads -type f -name 'test*' -maxdepth 1 | grep -E 'test\d$' | awk '{print $1 " ./"}' | xargs -n 2 mv
 }
@@ -79,9 +79,12 @@ movetest() {
 mkcd() { mkdir $* && cd $_ }
 
 # brew
-export PATH="/opt/homebrew/bin:$PATH"
+export PATH=/opt/homebrew/bin:$PATH
 # rbenv
 eval "$(rbenv init -)"
 # nodenv
 eval "$(nodenv init - zsh)"
 export PATH="$HOME/.nodenv/bin:$PATH"
+
+# for claude code
+export PATH="$HOME/.local/bin:$PATH"
