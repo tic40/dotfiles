@@ -45,7 +45,7 @@
   pager = less -r
   editor = vim
   whitespace = cr-at-eol
-	ignorecase = false
+  ignorecase = false
 [color]
   ui = true
 [merge]
