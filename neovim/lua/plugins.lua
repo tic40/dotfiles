@@ -37,6 +37,7 @@ return {
   -- Nvim-tree
   {
     "nvim-tree/nvim-tree.lua",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       require("nvim-tree").setup()
       vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
@@ -81,6 +82,11 @@ return {
             require("luasnip").lsp_expand(args.body)
           end,
         },
+        mapping = cmp.mapping.preset.insert({
+          ['<C-n>'] = cmp.mapping.select_next_item(),
+          ['<C-p>'] = cmp.mapping.select_prev_item(),
+          ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        }),
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
           { name = "luasnip" },
