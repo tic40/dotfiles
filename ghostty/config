@@ -2,3 +2,4 @@ theme = niji
 background-opacity = 0.9
 font-feature = -dlig,-liga,-calt
 window-padding-x = 10
+keybind = shift+enter=text:\n
