@@ -27,7 +27,7 @@ return {
     end
   },
 
-  -- Lualine
+  -- Indent guides
   {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
