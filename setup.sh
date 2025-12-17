@@ -1,5 +1,5 @@
 #!/bin/bash
-cd `dirname $0`
+cd "$(dirname "$0")"
 
 scripts_dir='scripts'
 scripts=('gitconfig.sh' 'neovim.sh' 'sshconfig.sh' 'zsh.sh' 'ghostty.sh')
