@@ -41,7 +41,6 @@ alias vi='nvim'
 alias vim='nvim'
 alias ls='ls -G'
 alias ll='ls -alGh'
-alias repo="cd ${REPO}"
 alias tic40="cd ${REPO}/tic40"
 alias atc="cd ${REPO}/tic40/atcoder"
 alias dotfiles="cd ${REPO}/tic40/dotfiles"
@@ -49,7 +48,7 @@ alias gccac="${GCCAC}"
 alias gccace="${GCCAC} && ./a.out"
 alias runtest="${REPO}/tic40/atcoder/scripts/runTest.sh"
 
-alias cdghq="cd \$(ghq list -p | fzf)"
+alias repo="cd \$(ghq list -p | fzf)"
 alias poc-note="cd ${REPO}/pocake/note"
 alias poc-notef="cd ${REPO}/pocake/note-front"
 alias poc-notef2="cd ${REPO}/pocake/frontend"
