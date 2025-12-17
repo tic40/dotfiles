@@ -49,10 +49,16 @@ alias gccac="${GCCAC}"
 alias gccace="${GCCAC} && ./a.out"
 alias runtest="${REPO}/tic40/atcoder/scripts/runTest.sh"
 
-alias cdrepo="cd \$(ghq list -p | fzf)"
+alias cdghq="cd \$(ghq list -p | fzf)"
 alias poc-note="cd ${REPO}/pocake/note"
 alias poc-notef="cd ${REPO}/pocake/note-front"
 alias poc-notef2="cd ${REPO}/pocake/frontend"
+
+alias gpc='gh pr create'
+alias gpl='gh pr list --limit 50'
+alias gplr='gh pr list --search "review-requested:@me"'
+alias gpco='gh pr checkout'
+alias gpv='gh pr view'
 
 alias untar='tar -zxvf'
 alias wget='wget -c'
