@@ -59,6 +59,7 @@ alias gplr='gh pr list --search "review-requested:@me"'
 alias gpco='gh pr checkout'
 alias gpv='gh pr view'
 
+alias clauded='claude --dangerously-skip-permissions'
 alias untar='tar -zxvf'
 alias wget='wget -c'
 alias getpass='openssl rand -base64 20'
@@ -94,3 +95,6 @@ export PATH="$HOME/.nodenv/bin:$PATH"
 
 # for claude code
 export PATH="$HOME/.local/bin:$PATH"
+
+export EDITOR=vim
+export GIT_EDITOR=vim
