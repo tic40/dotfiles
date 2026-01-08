@@ -50,3 +50,17 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+
+## Linux
+*~
+.fuse_hidden*
+.nfs*
+
+
+## Editor / IDE
+*.swp
+*.swo
+.idea/
+.vscode/
+*.sublime-workspace

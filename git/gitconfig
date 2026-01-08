@@ -9,7 +9,7 @@
   brr = branch -r
   c = commit
   c-rank = shortlog -sn --no-merges
-  c-rank-month = shortlog -sn --no-merges --after='date +%Y/%m/01' --before='date +%Y/%m/%d'
+  c-rank-month = "!git shortlog -sn --no-merges --after=\"$(date +%Y/%m/01)\" --before=\"$(date +%Y/%m/%d)\""
   cm = commit -m
   cma = commit --amend
   cme = commit --allow-empty -m
@@ -52,3 +52,5 @@
   ff = false
 [pull]
   ff = only
+[init]
+  defaultBranch = main
