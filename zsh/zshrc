@@ -97,5 +97,5 @@ eval "$(atuin init zsh)"
 # for claude code
 export PATH="$HOME/.local/bin:$PATH"
 
-export EDITOR=vim
-export GIT_EDITOR=vim
+export EDITOR=nvim
+export GIT_EDITOR=nvim
