@@ -92,7 +92,8 @@ eval "$(rbenv init -)"
 # nodenv
 eval "$(nodenv init - zsh)"
 export PATH="$HOME/.nodenv/bin:$PATH"
-
+# atuin
+eval "$(atuin init zsh)"
 # for claude code
 export PATH="$HOME/.local/bin:$PATH"
 
