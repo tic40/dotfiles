@@ -77,6 +77,7 @@ alias fizzbuzz='for i in {1..100}; do ([ $((i%15)) = 0 ] && echo 'fizzbuzz') || 
 alias dsize='du -sh ./*'
 alias wcnt='wc -m'
 alias ggrep='git grep'
+alias grep='rg'
 
 # Downloads の test\d ファイルをカレントディレクトリに移動する
 movetest() {
