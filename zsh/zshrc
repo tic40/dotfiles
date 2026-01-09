@@ -87,11 +87,8 @@ mkcd() { mkdir $* && cd $_ }
 
 # brew
 export PATH=/opt/homebrew/bin:$PATH
-# rbenv
-eval "$(rbenv init -)"
-# nodenv
-eval "$(nodenv init - zsh)"
-export PATH="$HOME/.nodenv/bin:$PATH"
+# mise
+eval "$(mise activate zsh)"
 # atuin
 eval "$(atuin init zsh)"
 # for claude code
