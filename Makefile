@@ -1,4 +1,4 @@
-.PHONY: help install all git zsh neovim ssh ghostty backup clean
+.PHONY: help install all git zsh neovim ssh ghostty mise backup clean
 
 DOTFILES := $(shell pwd)
 BACKUP_DIR := ~/.dotfiles_backup/$(shell date +%Y%m%d_%H%M%S)
@@ -8,7 +8,7 @@ help: ## Show this help
 
 install: all ## Install all dotfiles (alias for all)
 
-all: git zsh neovim ssh ghostty ## Install all dotfiles
+all: git zsh neovim ssh ghostty mise ## Install all dotfiles
 	@echo "Done!"
 
 git: ## Install git config
@@ -48,6 +48,12 @@ ghostty: ## Install ghostty config
 	@ln -sf $(DOTFILES)/ghostty/config ~/.config/ghostty/config
 	@echo "Ghostty config installed"
 
+mise: ## Install mise config
+	@echo "Installing mise config..."
+	@mkdir -p ~/.config/mise
+	@ln -sf $(DOTFILES)/mise/config.toml ~/.config/mise/config.toml
+	@echo "Mise config installed"
+
 clean: ## Remove installed symlinks
 	@echo "Removing symlinks..."
 	@rm -f ~/.gitconfig
@@ -56,4 +62,5 @@ clean: ## Remove installed symlinks
 	@rm -rf ~/.config/nvim
 	@rm -f ~/.ssh/config
 	@rm -f ~/.config/ghostty/config
+	@rm -f ~/.config/mise/config.toml
 	@echo "Clean complete"
