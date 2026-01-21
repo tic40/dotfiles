@@ -5,7 +5,6 @@ else
   echo "zplug is not installed. Please install it first."
 fi
 
-zplug "themes/clean", from:oh-my-zsh
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting"
@@ -94,6 +93,8 @@ eval "$(mise activate zsh)"
 eval "$(atuin init zsh)"
 # for claude code
 export PATH="$HOME/.local/bin:$PATH"
+# starship
+eval "$(starship init zsh)"
 
 export EDITOR=nvim
 export GIT_EDITOR=nvim
