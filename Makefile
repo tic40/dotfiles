@@ -1,7 +1,6 @@
-.PHONY: help install all git zsh neovim ssh ghostty mise backup clean
+.PHONY: help install all git zsh neovim ssh ghostty mise clean
 
 DOTFILES := $(shell pwd)
-BACKUP_DIR := ~/.dotfiles_backup/$(shell date +%Y%m%d_%H%M%S)
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-15s\033[0m %s\n", $$1, $$2}'
