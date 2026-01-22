@@ -98,3 +98,6 @@ eval "$(starship init zsh)"
 
 export EDITOR=nvim
 export GIT_EDITOR=nvim
+
+# Load local config (secrets, machine-specific settings)
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
