@@ -64,3 +64,7 @@ $RECYCLE.BIN/
 .idea/
 .vscode/
 *.sublime-workspace
+
+## Claude Code
+CLAUDE.local.md
+.claude/settings.local.json
