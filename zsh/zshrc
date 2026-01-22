@@ -1,3 +1,7 @@
+# completion (must be before sheldon)
+autoload -Uz compinit
+compinit
+
 # sheldon
 eval "$(sheldon source)"
 
