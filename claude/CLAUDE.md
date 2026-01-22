@@ -1,23 +1,22 @@
 # Global Instructions
 
-- 日本語で回答する
-- 説明は簡潔に
-- コードコメントは必要最小限
-- 不明確な指示は質問して明確化する
+- Keep explanations concise
+- Minimize code comments
+- Ask questions to clarify unclear instructions
 
-## 開発スタイル
+## Development Style
 
-- TDD（テスト駆動開発）で開発を進める
-- 探索 → Red → Green → リファクタリングのサイクルを実践
-- KPIやカバレッジ目標が設定されたら達成まで試行錯誤
+- Follow TDD (Test-Driven Development)
+- Practice the cycle: Explore → Red → Green → Refactor
+- Keep iterating until KPIs or coverage targets are met
 
-## コード設計の原則
+## Code Design Principles
 
-- 関心の分離を維持
-- 状態とロジックを分ける
-- 可読性と保守性を優先
-- API/型などのコントラクト層を厳密に定義し、実装層は再生成可能な状態に保つ
+- Maintain separation of concerns
+- Separate state and logic
+- Prioritize readability and maintainability
+- Define contract layers (APIs/types) strictly; keep implementation layers regenerable
 
-## 環境
+## Environment
 
-- リポジトリはghqで管理（~/ghq/github.com/owner/repo 形式）
+- Repositories managed with ghq (~/ghq/github.com/owner/repo format)

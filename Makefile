@@ -63,6 +63,8 @@ claude: ## Install Claude Code config
 	@mkdir -p ~/.claude
 	@ln -sf $(DOTFILES)/claude/CLAUDE.md ~/.claude/CLAUDE.md
 	@ln -sf $(DOTFILES)/claude/settings.json ~/.claude/settings.json
+	@rm -rf ~/.claude/rules
+	@ln -sf $(DOTFILES)/claude/rules ~/.claude/rules
 	@echo "Claude Code config installed"
 
 clean: ## Remove installed symlinks
@@ -77,4 +79,5 @@ clean: ## Remove installed symlinks
 	@rm -f ~/.config/starship.toml
 	@rm -f ~/.claude/CLAUDE.md
 	@rm -f ~/.claude/settings.json
+	@rm -rf ~/.claude/rules
 	@echo "Clean complete"
