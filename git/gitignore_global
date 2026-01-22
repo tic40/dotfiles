@@ -68,3 +68,31 @@ $RECYCLE.BIN/
 ## Claude Code
 CLAUDE.local.md
 .claude/settings.local.json
+
+## Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn
+
+## Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+.env
+
+## Ruby
+*.gem
+.bundle/
+vendor/bundle
+
+## Build outputs
+dist/
+build/
+*.log

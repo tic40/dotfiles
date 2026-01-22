@@ -1,0 +1,9 @@
+# SSH private keys
+ssh/github_tic40
+ssh/*.pem
+ssh/id_*
+!ssh/id_*.pub
+
+# Local overrides
+*.local
+*.local.*

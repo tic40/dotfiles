@@ -37,9 +37,8 @@ ssh: ## Install ssh config
 	@mkdir -p ~/.ssh
 	@chmod 700 ~/.ssh
 	@ln -sf $(DOTFILES)/ssh/config ~/.ssh/config
-	@cp $(DOTFILES)/ssh/github_tic40 ~/.ssh/github_tic40
-	@chmod 600 ~/.ssh/github_tic40
 	@echo "SSH config installed"
+	@echo "NOTE: Copy your SSH private key manually to ~/.ssh/github_tic40"
 
 ghostty: ## Install ghostty config
 	@echo "Installing ghostty config..."
@@ -55,7 +54,7 @@ mise: ## Install mise config
 
 starship: ## Install starship config
 	@echo "Installing starship config..."
-	@ln -sf $(DOTFILES)/startship/starship.toml ~/.config/starship.toml
+	@ln -sf $(DOTFILES)/starship/starship.toml ~/.config/starship.toml
 	@echo "Starship config installed"
 
 claude: ## Install Claude Code config
