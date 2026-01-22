@@ -13,7 +13,7 @@ Personal dotfiles for macOS development environment.
 | Tool | Description |
 |------|-------------|
 | Git | Version control config and aliases |
-| Zsh | Shell config with zplug plugins |
+| Zsh | Shell config with sheldon plugins |
 | Neovim | Editor with LSP and plugins |
 | Ghostty | Terminal emulator |
 | Starship | Shell prompt |
@@ -40,7 +40,7 @@ make clean    # Remove installed symlinks
 
 ```bash
 make git       # ~/.gitconfig, ~/.gitignore_global
-make zsh       # ~/.zshrc (includes zplug setup)
+make zsh       # ~/.zshrc, ~/.config/sheldon/plugins.toml
 make neovim    # ~/.config/nvim/
 make ssh       # ~/.ssh/config
 make ghostty   # ~/.config/ghostty/

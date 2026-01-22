@@ -1,21 +1,5 @@
-# zplug
-if [ -f ~/.zplug/init.zsh ]; then
-  source ~/.zplug/init.zsh
-else
-  echo "zplug is not installed. Please install it first."
-fi
-
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-syntax-highlighting"
-zplug "b4b4r07/enhancd", use:"init.sh"
-
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-  echo "Installing missing plugins..."
-  zplug install
-fi
-zplug load
+# sheldon
+eval "$(sheldon source)"
 
 # completion
 setopt auto_cd

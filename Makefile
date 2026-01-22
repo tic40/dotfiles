@@ -18,11 +18,9 @@ git: ## Install git config
 
 zsh: ## Install zsh config
 	@echo "Installing zsh config..."
-	@if [ ! -d ~/.zplug ]; then \
-		echo "Installing zplug..."; \
-		curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh; \
-	fi
 	@ln -sf $(DOTFILES)/zsh/zshrc ~/.zshrc
+	@mkdir -p ~/.config/sheldon
+	@ln -sf $(DOTFILES)/sheldon/plugins.toml ~/.config/sheldon/plugins.toml
 	@echo "Zsh config installed"
 
 neovim: ## Install neovim config
@@ -71,6 +69,7 @@ clean: ## Remove installed symlinks
 	@rm -f ~/.gitconfig
 	@rm -f ~/.gitignore_global
 	@rm -f ~/.zshrc
+	@rm -f ~/.config/sheldon/plugins.toml
 	@rm -rf ~/.config/nvim
 	@rm -f ~/.ssh/config
 	@rm -f ~/.config/ghostty/config
