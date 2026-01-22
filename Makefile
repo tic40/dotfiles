@@ -61,7 +61,7 @@ starship: ## Install starship config
 claude: ## Install Claude Code config
 	@echo "Installing Claude Code config..."
 	@mkdir -p ~/.claude
-	@ln -sf $(DOTFILES)/claude/claude.md ~/.claude.md
+	@ln -sf $(DOTFILES)/claude/CLAUDE.md ~/.claude/CLAUDE.md
 	@ln -sf $(DOTFILES)/claude/settings.json ~/.claude/settings.json
 	@echo "Claude Code config installed"
 
@@ -75,6 +75,6 @@ clean: ## Remove installed symlinks
 	@rm -f ~/.config/ghostty/config
 	@rm -f ~/.config/mise/config.toml
 	@rm -f ~/.config/starship.toml
-	@rm -f ~/.claude.md
+	@rm -f ~/.claude/CLAUDE.md
 	@rm -f ~/.claude/settings.json
 	@echo "Clean complete"
