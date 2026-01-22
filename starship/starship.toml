@@ -1,4 +1,4 @@
-format = "$directory$git_branch$git_status$time$character"
+format = "$directory$git_branch$git_status$time $character"
 add_newline = false
 
 [git_branch]
@@ -6,5 +6,5 @@ format = "[$symbol$branch]($style) "
 
 [time]
 disabled = false
-format = "[$time]($style) "
+format = "[$time]($style)"
 time_format = "[%H:%M]"
