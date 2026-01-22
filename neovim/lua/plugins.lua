@@ -51,6 +51,11 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       require("telescope").setup()
+      local builtin = require("telescope.builtin")
+      vim.keymap.set("n", "<leader>ff", builtin.find_files)
+      vim.keymap.set("n", "<leader>fg", builtin.live_grep)
+      vim.keymap.set("n", "<leader>fb", builtin.buffers)
+      vim.keymap.set("n", "<leader>fh", builtin.help_tags)
     end,
   },
 
@@ -59,16 +64,10 @@ return {
     "tpope/vim-fugitive",
   },
 
-  -- LSP Configuration
-  {
-    "neovim/nvim-lspconfig",
-  },
-
   -- Completion Engine
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
@@ -89,7 +88,6 @@ return {
           ['<CR>'] = cmp.mapping.confirm({ select = true }),
         }),
         sources = cmp.config.sources({
-          { name = "nvim_lsp" },
           { name = "luasnip" },
           { name = "buffer" },
           { name = "path" },

@@ -55,6 +55,10 @@ vim.opt.wrap = true
 vim.opt.swapfile = false
 vim.opt.backup = false
 
+-- Persistent undo
+vim.opt.undofile = true
+vim.opt.undodir = vim.fn.stdpath("data") .. "/undo"
+
 -- IME settings
 vim.opt.iminsert = 0
 vim.opt.imsearch = 0
