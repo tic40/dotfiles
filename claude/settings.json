@@ -2,7 +2,18 @@
   "model": "opus",
   "language": "japanese",
   "permissions": {
-    "defaultMode": "acceptEdits"
+    "defaultMode": "acceptEdits",
+    "allow": [
+      "Bash(npm run:*)",
+      "Bash(npm test:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(gh pr:*)",
+      "Bash(gh issue:*)"
+    ]
   },
   "enabledPlugins": {
     "code-simplifier@claude-plugins-official": true
