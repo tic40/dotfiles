@@ -1,4 +1,4 @@
-.PHONY: help install all git zsh neovim ssh ghostty mise starship clean
+.PHONY: help install all git zsh neovim ssh ghostty mise starship claude clean
 
 DOTFILES := $(shell pwd)
 
@@ -7,7 +7,7 @@ help: ## Show this help
 
 install: all ## Install all dotfiles (alias for all)
 
-all: git zsh neovim ssh ghostty mise starship ## Install all dotfiles
+all: git zsh neovim ssh ghostty mise starship claude ## Install all dotfiles
 	@echo "Done!"
 
 git: ## Install git config
@@ -58,6 +58,13 @@ starship: ## Install starship config
 	@ln -sf $(DOTFILES)/startship/starship.toml ~/.config/starship.toml
 	@echo "Starship config installed"
 
+claude: ## Install Claude Code config
+	@echo "Installing Claude Code config..."
+	@mkdir -p ~/.claude
+	@ln -sf $(DOTFILES)/claude/claude.md ~/.claude.md
+	@ln -sf $(DOTFILES)/claude/settings.json ~/.claude/settings.json
+	@echo "Claude Code config installed"
+
 clean: ## Remove installed symlinks
 	@echo "Removing symlinks..."
 	@rm -f ~/.gitconfig
@@ -68,4 +75,6 @@ clean: ## Remove installed symlinks
 	@rm -f ~/.config/ghostty/config
 	@rm -f ~/.config/mise/config.toml
 	@rm -f ~/.config/starship.toml
+	@rm -f ~/.claude.md
+	@rm -f ~/.claude/settings.json
 	@echo "Clean complete"
