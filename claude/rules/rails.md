@@ -13,8 +13,6 @@
 app/
 ├── controllers/    # Request handling only
 ├── models/         # Data layer + validations
-├── services/       # Business logic
-├── serializers/    # JSON formatting
 └── views/          # Presentation layer
 ```
 
