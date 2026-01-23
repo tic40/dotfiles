@@ -66,8 +66,8 @@ $RECYCLE.BIN/
 *.sublime-workspace
 
 ## Claude Code
-CLAUDE.local.md
-.claude/settings.local.json
+**/CLAUDE.local.md
+**/.claude/settings.local.json
 
 ## Node.js
 node_modules/
