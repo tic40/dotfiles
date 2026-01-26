@@ -2,7 +2,7 @@
   name = tic40
   email = ccpzjoh@gmail.com
 [alias]
-  aicm = "!f() { COMMITMSG=$(claude -p 'Generate ONLY a one-line Git commit message in English, using imperative mood, summarizing what was changed and why, based strictly on the contents of `git diff --cached`. Do not add explanation or a body. Output only the commit summary line.'); git commit -m \"$COMMITMSG\" -e; }; f"
+  aicm = "!f() { COMMITMSG=$(git diff --cached | claude -p 'Generate ONLY a one-line Git commit message in English, using imperative mood, summarizing what was changed and why. Do not add explanation or a body. Output only the commit summary line.'); git commit -m \"$COMMITMSG\" -e; }; f"
   br = branch
   brc = branch --show-current
   bra = branch -a
