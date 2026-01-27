@@ -62,6 +62,8 @@ claude: ## Install Claude Code config
 	@ln -sf $(DOTFILES)/claude/settings.json ~/.claude/settings.json
 	@rm -rf ~/.claude/rules
 	@ln -sf $(DOTFILES)/claude/rules ~/.claude/rules
+	@rm -rf ~/.claude/skills
+	@ln -sf $(DOTFILES)/claude/skills ~/.claude/skills
 	@echo "Claude Code config installed"
 
 clean: ## Remove installed symlinks
@@ -78,4 +80,5 @@ clean: ## Remove installed symlinks
 	@rm -f ~/.claude/CLAUDE.md
 	@rm -f ~/.claude/settings.json
 	@rm -rf ~/.claude/rules
+	@rm -rf ~/.claude/skills
 	@echo "Clean complete"
