@@ -40,11 +40,7 @@ alias poc-note="cd ${REPO}/pocake/note"
 alias poc-notef="cd ${REPO}/pocake/note-front"
 alias poc-notef2="cd ${REPO}/pocake/frontend"
 
-alias gpc='gh pr create'
-alias gpl='gh pr list --limit 50'
-alias gplr='gh pr list --search "review-requested:@me"'
-alias gpco='gh pr checkout'
-alias gpv='gh pr view'
+alias ghreview='gh pr list --search "review-requested:@me"'
 
 alias clauded='claude --dangerously-skip-permissions'
 alias untar='tar -zxvf'
