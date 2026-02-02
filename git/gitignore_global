@@ -92,6 +92,12 @@ venv/
 .bundle/
 vendor/bundle
 
+## Secrets
+.secrets
+.secrets.*
+*.secret
+secrets/
+
 ## Build outputs
 dist/
 build/
