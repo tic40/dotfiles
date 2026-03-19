@@ -3,6 +3,7 @@
 - Keep explanations concise
 - Minimize code comments
 - Ask questions to clarify unclear instructions
+- NEVER run `git commit`, `git push`, or any GitHub write operations (PR creation, comments, reviews, issue updates) without explicit user approval. Always ask before executing.
 
 ## Development Style
 
