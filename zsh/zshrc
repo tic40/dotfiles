@@ -41,6 +41,7 @@ alias poc-notef="cd ${REPO}/pocake/note-front"
 alias poc-notef2="cd ${REPO}/pocake/frontend"
 
 alias ghreview='gh pr list --search "review-requested:@me"'
+alias gbc='git branch --show-current | pbcopy'
 
 alias clauded='claude --dangerously-skip-permissions'
 alias untar='tar -zxvf'
