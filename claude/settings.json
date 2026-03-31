@@ -17,5 +17,6 @@
     "code-simplifier@claude-plugins-official": true
   },
   "language": "japanese",
+  "effortLevel": "high",
   "skipDangerousModePermissionPrompt": true
 }
