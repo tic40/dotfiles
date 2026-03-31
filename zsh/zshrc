@@ -78,11 +78,14 @@ eval "$(mise activate zsh)"
 eval "$(atuin init zsh)"
 # for claude code
 export PATH="$HOME/.local/bin:$PATH"
+export CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1
 # starship
 eval "$(starship init zsh)"
 
 export EDITOR=nvim
 export GIT_EDITOR=nvim
 
+
 # Load local config (secrets, machine-specific settings)
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
