@@ -19,6 +19,7 @@
   df = diff --color
   dfc = diff --color-words
   fe = fetch -p
+  fp = !git fetch -p && git pull
   info = remote show origin
   l = log --date=short --pretty=format:'%C(yellow)%h %Cgreen%cd %Cblue%cn %Creset%s'
   lg = log --graph --date=short --decorate=short --pretty=format:'%C(yellow)%h %Cgreen%cd %Cblue%cn%Cred%d %Creset%s'
