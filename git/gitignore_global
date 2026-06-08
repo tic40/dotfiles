@@ -26,7 +26,6 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-
 ## Windows
 # Windows thumbnail cache files
 Thumbs.db
@@ -51,12 +50,10 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-
 ## Linux
 *~
 .fuse_hidden*
 .nfs*
-
 
 ## Editor / IDE
 *.swp
@@ -68,6 +65,7 @@ $RECYCLE.BIN/
 ## Claude Code
 **/CLAUDE.local.md
 **/.claude/settings.local.json
+.claude/*.lock
 
 ## Node.js
 node_modules/
