@@ -13,18 +13,33 @@ return {
   -- Syntax highlight
   {
     'nvim-treesitter/nvim-treesitter',
-    branch = 'master',
+    branch = 'main',
+    lazy = false,
     build = ':TSUpdate',
     config = function()
-      require'nvim-treesitter.configs'.setup {
-        ensure_installed = {"vim", "dockerfile", "typescript", "tsx", "javascript", "json", "lua", "bash", "markdown", "css", "scss", "yaml", "vue", "php", "html", "cpp", "ruby", "python"},
-        highlight = {
-          enable = true,
-        },
-        indent = {
-          enable = true,
-        },
+      require('nvim-treesitter').setup()
+
+      local want = {
+        "vim", "dockerfile", "typescript", "tsx", "javascript", "json",
+        "lua", "bash", "markdown", "css", "scss", "yaml", "vue", "php",
+        "html", "cpp", "ruby", "python",
       }
+      local installed = require('nvim-treesitter.config').get_installed('parsers') or {}
+      local installed_set = {}
+      for _, p in ipairs(installed) do installed_set[p] = true end
+      local missing = vim.tbl_filter(function(p) return not installed_set[p] end, want)
+      if #missing > 0 then
+        require('nvim-treesitter').install(missing)
+      end
+
+      vim.api.nvim_create_autocmd('FileType', {
+        callback = function(args)
+          local lang = vim.treesitter.language.get_lang(args.match)
+          if lang and pcall(vim.treesitter.start, args.buf, lang) then
+            vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+          end
+        end,
+      })
     end
   },
 
