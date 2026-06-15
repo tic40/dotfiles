@@ -1,4 +1,5 @@
 ---
+name: extract-my-prs-from-release
 description: リリースPRから自分のPRを抽出して一覧表示[/extract-my-prs-from-release PR番号orURL [ユーザー名]]
 arguments:
   - name: pr

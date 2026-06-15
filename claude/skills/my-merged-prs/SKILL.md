@@ -1,4 +1,5 @@
 ---
+name: my-merged-prs
 description: 自分のマージ済みPRをサマリー表示[/my-merged-prs 期間]
 arguments:
   - name: period
@@ -12,10 +13,11 @@ arguments:
 
 ## Steps
 
-1. 以下のコマンドでマージ済みPRを取得:
-   - yesterday: `gh pr list --author @me --state merged --search "merged:>=$(date -v-1d +%Y-%m-%d)" --json number,title,url,mergedAt,body`
-   - week: `gh pr list --author @me --state merged --search "merged:>=$(date -v-7d +%Y-%m-%d)" --json number,title,url,mergedAt,body`
-   - month: `gh pr list --author @me --state merged --search "merged:>=$(date -v-30d +%Y-%m-%d)" --json number,title,url,mergedAt,body`
+1. 以下のコマンドでマージ済みPRを取得（`--limit` でデフォルト30件の上限を引き上げ、件数の取りこぼしを防ぐ）:
+   - yesterday: `gh pr list --author @me --state merged --limit 200 --search "merged:>=$(date -v-1d +%Y-%m-%d)" --json number,title,url,mergedAt,body`
+   - week: `gh pr list --author @me --state merged --limit 200 --search "merged:>=$(date -v-7d +%Y-%m-%d)" --json number,title,url,mergedAt,body`
+   - month: `gh pr list --author @me --state merged --limit 200 --search "merged:>=$(date -v-30d +%Y-%m-%d)" --json number,title,url,mergedAt,body`
+   - 取得件数が `--limit` に達した場合は上限到達の可能性をユーザーに伝える
 
 2. PRタイトルのプレフィックス（feat:, fix:, refactor:, chore:, docs:, test:）を分析してカテゴリ別に分類
 
