@@ -14,9 +14,24 @@
     "defaultMode": "acceptEdits"
   },
   "enabledPlugins": {
-    "code-simplifier@claude-plugins-official": true
+    "codex@openai-codex": true,
+    "superpowers@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
+      }
+    }
   },
   "language": "japanese",
   "effortLevel": "high",
-  "skipDangerousModePermissionPrompt": true
+  "voice": {
+    "enabled": true,
+    "mode": "hold"
+  },
+  "skipDangerousModePermissionPrompt": true,
+  "skipAutoPermissionPrompt": true,
+  "voiceEnabled": true
 }
