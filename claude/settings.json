@@ -15,7 +15,8 @@
   },
   "enabledPlugins": {
     "codex@openai-codex": true,
-    "superpowers@claude-plugins-official": true
+    "superpowers@claude-plugins-official": true,
+    "ruby-lsp@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
@@ -31,7 +32,9 @@
     "enabled": true,
     "mode": "hold"
   },
-  "skipDangerousModePermissionPrompt": true,
   "skipAutoPermissionPrompt": true,
+  "skipDangerousModePermissionPrompt": true,
+  "skipWorkflowUsageWarning": true,
+  "theme": "dark",
   "voiceEnabled": true
 }
