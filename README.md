@@ -14,7 +14,7 @@ Personal dotfiles for macOS development environment.
 |------|-------------|
 | Git | Version control config and aliases |
 | Zsh | Shell config with sheldon plugins |
-| Neovim | Editor with LSP and plugins |
+| Neovim | Editor with Treesitter, completion and plugins |
 | Ghostty | Terminal emulator |
 | Starship | Shell prompt |
 | Mise | Runtime version manager |

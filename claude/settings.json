@@ -35,6 +35,5 @@
   "skipAutoPermissionPrompt": true,
   "skipDangerousModePermissionPrompt": true,
   "skipWorkflowUsageWarning": true,
-  "theme": "dark",
-  "voiceEnabled": true
+  "theme": "dark"
 }

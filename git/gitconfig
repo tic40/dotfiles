@@ -44,7 +44,7 @@
   excludesfile = ~/.gitignore_global
   autocrlf = false
   pager = less -r
-  editor = vim
+  editor = nvim
   whitespace = cr-at-eol
   ignorecase = false
 [color]
