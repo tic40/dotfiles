@@ -58,7 +58,12 @@ cp /path/to/your/key ~/.ssh/github_tic40
 chmod 600 ~/.ssh/github_tic40
 ```
 
+## Secrets setup
+
+Secrets are not committed to this repository. Machine-specific tokens go in
+`~/.zshrc.local` (sourced automatically by `~/.zshrc`, not tracked by git).
+
 ## Local overrides
 
-- `~/.zshrc.local` - Machine-specific shell config (sourced automatically)
+- `~/.zshrc.local` - Machine-specific shell config and secrets (sourced automatically)
 - `~/.claude/settings.local.json` - Local Claude Code settings
