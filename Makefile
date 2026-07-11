@@ -64,6 +64,12 @@ claude: ## Install Claude Code config
 	@ln -sf $(DOTFILES)/claude/rules ~/.claude/rules
 	@rm -rf ~/.claude/skills
 	@ln -sf $(DOTFILES)/claude/skills ~/.claude/skills
+	@echo "Registering user-scope MCP servers (tokens read from env at runtime)..."
+	@command -v claude >/dev/null 2>&1 && { \
+	  claude mcp remove -s user trello >/dev/null 2>&1 || true; \
+	  claude mcp add-json -s user trello '{"type":"stdio","command":"pnpm","args":["dlx","@delorenj/mcp-server-trello"],"env":{"TRELLO_API_KEY":"$${TRELLO_API_KEY}","TRELLO_TOKEN":"$${TRELLO_TOKEN}"}}' && \
+	  echo "  trello registered (set TRELLO_API_KEY / TRELLO_TOKEN in ~/.zshrc.local)"; \
+	} || echo "  claude CLI not found, skipped MCP registration"
 	@echo "Claude Code config installed"
 
 clean: ## Remove installed symlinks
