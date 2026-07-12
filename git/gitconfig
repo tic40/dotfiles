@@ -43,7 +43,8 @@
 [core]
   excludesfile = ~/.gitignore_global
   autocrlf = false
-  pager = less -r
+  pager = less -R
+  quotepath = false
   editor = nvim
   whitespace = cr-at-eol
   ignorecase = false
