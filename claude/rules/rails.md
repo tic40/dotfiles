@@ -1,3 +1,7 @@
+---
+paths: "**/*.rb"
+---
+
 # Rails Best Practices
 
 ## Principles

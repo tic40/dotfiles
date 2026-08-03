@@ -1,3 +1,7 @@
+---
+paths: ["**/*.rb", "**/*.sql", "db/**/*"]
+---
+
 # MySQL Best Practices
 
 ## Principles

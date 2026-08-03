@@ -31,9 +31,9 @@ chore: maintenance
 # Create branch
 git checkout -b feature/xxx
 
-# Sync with main
+# Sync with the repo's default branch (main / develop など)
 git fetch origin
-git rebase origin/main
+git rebase origin/<default-branch>
 
 # Create PR
 gh pr create
