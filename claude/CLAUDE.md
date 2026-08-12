@@ -9,7 +9,7 @@
 
 - Follow TDD (Test-Driven Development)
 - Practice the cycle: Explore → Red → Green → Refactor
-- Keep iterating until KPIs or coverage targets are met
+- Iterate until the test suite passes and every changed line is covered by a test
 
 ## Code Design Principles
 
@@ -21,3 +21,7 @@
 ## Environment
 
 - Repositories managed with ghq (~/ghq/github.com/owner/repo format)
+- Find repo paths with `ghq list -p`
+- Runtimes managed by mise (node / ruby, both `latest`)
+- Node projects use pnpm
+- If a repo contains AGENTS.md, read it alongside CLAUDE.md
