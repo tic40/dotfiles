@@ -29,14 +29,6 @@ vim.opt.smartcase = true
 -- UI enhancements
 vim.opt.ruler = true
 vim.opt.showcmd = true
-vim.opt.listchars = {
-  tab = "»·",
-  trail = "·",
-  extends = "❯",
-  precedes = "❮",
-  nbsp = "␣",
-  eol = "↲",
-}
 vim.opt.wildmenu = true
 vim.opt.wildmode = { "list", "longest" }
 vim.opt.laststatus = 2

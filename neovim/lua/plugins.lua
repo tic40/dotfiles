@@ -2,6 +2,8 @@ return {
   -- Theme
   {
     "Mofiqul/vscode.nvim",
+    lazy = false,
+    priority = 1000,
     config = function()
       if not vim.g.vscode then
         vim.o.termguicolors = true
@@ -56,7 +58,7 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       require("nvim-tree").setup()
-      vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+      vim.keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { silent = true })
     end,
   },
 
@@ -79,22 +81,39 @@ return {
     "tpope/vim-fugitive",
   },
 
+  -- LSP
+  {
+    "neovim/nvim-lspconfig",
+    dependencies = { "hrsh7th/cmp-nvim-lsp" },
+    config = function()
+      vim.lsp.config("*", {
+        capabilities = require("cmp_nvim_lsp").default_capabilities(),
+      })
+      local global_ts = vim.fn.glob(vim.env.HOME .. "/Library/pnpm/global/*/*/node_modules/typescript/lib", false, true)[1]
+      vim.lsp.config("ts_ls", {
+        init_options = { tsserver = { fallbackPath = global_ts } },
+      })
+      vim.lsp.config("clangd", {
+        cmd = { "clangd", "--query-driver=/usr/local/bin/g++*,/opt/homebrew/bin/g++*" },
+      })
+      vim.lsp.enable({ "ruby_lsp", "ts_ls", "clangd" })
+    end,
+  },
+
   -- Completion Engine
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
+      "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
-      "hrsh7th/cmp-cmdline",
-      "L3MON4D3/LuaSnip",
-      "saadparwaiz1/cmp_luasnip",
     },
     config = function()
       local cmp = require("cmp")
       cmp.setup({
         snippet = {
           expand = function(args)
-            require("luasnip").lsp_expand(args.body)
+            vim.snippet.expand(args.body)
           end,
         },
         mapping = cmp.mapping.preset.insert({
@@ -103,9 +122,10 @@ return {
           ['<CR>'] = cmp.mapping.confirm({ select = true }),
         }),
         sources = cmp.config.sources({
-          { name = "luasnip" },
-          { name = "buffer" },
+          { name = "nvim_lsp" },
           { name = "path" },
+        }, {
+          { name = "buffer" },
         }),
       })
     end,
