@@ -42,14 +42,9 @@
   sw = switch
 [core]
   excludesfile = ~/.gitignore_global
-  autocrlf = false
-  pager = less -R
   quotepath = false
   editor = nvim
   whitespace = cr-at-eol
-  ignorecase = false
-[color]
-  ui = true
 [merge]
   ff = false
 [pull]
