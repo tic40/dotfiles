@@ -1,5 +1,5 @@
-theme = niji
+theme = Niji
 background-opacity = 0.9
+background-blur = true
 font-feature = -dlig,-liga,-calt
 window-padding-x = 10
-keybind = shift+enter=text:\n
