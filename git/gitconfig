@@ -16,7 +16,7 @@
   co = checkout
   cob = checkout -b
   conf = config --list
-  df = diff --color
+  df = diff
   dfc = diff --color-words
   fe = fetch -p
   fp = !git fetch -p && git pull
