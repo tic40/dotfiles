@@ -45,8 +45,6 @@
   quotepath = false
   editor = nvim
   whitespace = cr-at-eol
-[merge]
-  ff = false
 [pull]
   ff = only
 [init]
