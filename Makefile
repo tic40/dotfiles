@@ -48,6 +48,7 @@ mise: ## Install mise config
 	@echo "Installing mise config..."
 	@mkdir -p ~/.config/mise
 	@ln -sf $(DOTFILES)/mise/config.toml ~/.config/mise/config.toml
+	@ln -sf $(DOTFILES)/mise/default-gems ~/.default-gems
 	@echo "Mise config installed"
 
 starship: ## Install starship config
@@ -82,6 +83,7 @@ clean: ## Remove installed symlinks
 	@rm -f ~/.ssh/config
 	@rm -f ~/.config/ghostty/config
 	@rm -f ~/.config/mise/config.toml
+	@rm -f ~/.default-gems
 	@rm -f ~/.config/starship.toml
 	@rm -f ~/.claude/CLAUDE.md
 	@rm -f ~/.claude/settings.json
