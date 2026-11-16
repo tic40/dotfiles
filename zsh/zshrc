@@ -75,3 +75,4 @@ export EDITOR=nvim
 
 # Load local config (secrets, machine-specific settings)
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
