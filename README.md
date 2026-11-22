@@ -16,6 +16,7 @@ Personal dotfiles for macOS development environment.
 | Zsh | Shell config with sheldon plugins |
 | Neovim | Editor with Treesitter, completion and plugins |
 | Ghostty | Terminal emulator |
+| Herdr | Terminal workspace manager for AI coding agents |
 | Starship | Shell prompt |
 | Mise | Runtime version manager |
 | Claude Code | AI assistant config |
@@ -44,6 +45,7 @@ make zsh       # ~/.zshrc, ~/.config/sheldon/plugins.toml
 make neovim    # ~/.config/nvim/
 make ssh       # ~/.ssh/config
 make ghostty   # ~/.config/ghostty/
+make herdr     # ~/.config/herdr/config.toml
 make mise      # ~/.config/mise/
 make starship  # ~/.config/starship.toml
 make claude    # ~/.claude/

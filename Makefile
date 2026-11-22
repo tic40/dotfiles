@@ -1,4 +1,4 @@
-.PHONY: help install all git zsh neovim ssh ghostty mise starship claude clean
+.PHONY: help install all git zsh neovim ssh ghostty herdr mise starship claude clean
 
 DOTFILES := $(shell pwd)
 
@@ -7,7 +7,7 @@ help: ## Show this help
 
 install: all ## Install all dotfiles (alias for all)
 
-all: git zsh neovim ssh ghostty mise starship claude ## Install all dotfiles
+all: git zsh neovim ssh ghostty herdr mise starship claude ## Install all dotfiles
 	@echo "Done!"
 
 git: ## Install git config
@@ -43,6 +43,12 @@ ghostty: ## Install ghostty config
 	@mkdir -p ~/.config/ghostty
 	@ln -sf $(DOTFILES)/ghostty/config ~/.config/ghostty/config
 	@echo "Ghostty config installed"
+
+herdr: ## Install herdr config
+	@echo "Installing herdr config..."
+	@mkdir -p ~/.config/herdr
+	@ln -sf $(DOTFILES)/herdr/config.toml ~/.config/herdr/config.toml
+	@echo "Herdr config installed"
 
 mise: ## Install mise config
 	@echo "Installing mise config..."
@@ -82,6 +88,7 @@ clean: ## Remove installed symlinks
 	@rm -rf ~/.config/nvim
 	@rm -f ~/.ssh/config
 	@rm -f ~/.config/ghostty/config
+	@rm -f ~/.config/herdr/config.toml
 	@rm -f ~/.config/mise/config.toml
 	@rm -f ~/.default-gems
 	@rm -f ~/.config/starship.toml
