@@ -2,7 +2,6 @@
   name = tic40
   email = ccpzjoh@gmail.com
 [alias]
-  aicm = "!f() { COMMITMSG=$(git diff --cached | claude -p 'Generate ONLY a one-line Git commit message in English, using imperative mood, summarizing what was changed and why. Do not add explanation or a body. Output only the commit summary line.'); git commit -m \"$COMMITMSG\" -e; }; f"
   br = branch
   brc = branch --show-current
   bra = branch -a
@@ -18,8 +17,8 @@
   conf = config --list
   df = diff
   dfc = diff --color-words
-  fe = fetch -p
-  fp = !git fetch -p && git pull
+  fe = fetch
+  fp = !git fetch && git pull
   info = remote show origin
   l = log --date=short --pretty=format:'%C(yellow)%h %Cgreen%cd %Cblue%cn %Creset%s'
   lg = log --graph --date=short --decorate=short --pretty=format:'%C(yellow)%h %Cgreen%cd %Cblue%cn%Cred%d %Creset%s'
@@ -35,7 +34,7 @@
   rh = reset --hard
   rhh = reset --hard HEAD
   rl = reflog show
-  rmall = "!git rm `git ls-files --deleted` " # remove all deleted file
+  rmall = "!git ls-files -dz | xargs -0 git rm --"
   rs = reset --soft
   rsh = reset --soft HEAD
   st = status
@@ -49,3 +48,17 @@
   ff = only
 [init]
   defaultBranch = main
+[push]
+  autoSetupRemote = true
+[fetch]
+  prune = true
+[rebase]
+  autoStash = true
+[merge]
+  conflictstyle = zdiff3
+[diff]
+  algorithm = histogram
+[rerere]
+  enabled = true
+[include]
+  path = ~/.gitconfig.local
