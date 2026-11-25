@@ -1,6 +1,25 @@
 .PHONY: help install all git zsh neovim ssh ghostty herdr mise starship claude clean
 
-DOTFILES := $(shell pwd)
+DOTFILES := $(CURDIR)
+
+# $(call link,src,dest): back up dest if it is a real file/dir, then symlink
+define link
+	@if [ -e "$(2)" ] && [ ! -L "$(2)" ]; then \
+	  bak="$(2).bak.$$(date +%Y%m%d%H%M%S)"; mv "$(2)" "$$bak"; echo "  backed up $(2) -> $$bak"; \
+	fi
+	@ln -sfn "$(1)" "$(2)"
+endef
+
+LINKS := \
+  ~/.gitconfig ~/.gitignore_global \
+  ~/.zshrc ~/.config/sheldon/plugins.toml \
+  ~/.config/nvim \
+  ~/.ssh/config \
+  ~/.config/ghostty/config \
+  ~/.config/herdr/config.toml \
+  ~/.config/mise/config.toml ~/.default-gems \
+  ~/.config/starship.toml \
+  ~/.claude/CLAUDE.md ~/.claude/settings.json ~/.claude/rules ~/.claude/skills ~/.claude/commands
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-15s\033[0m %s\n", $$1, $$2}'
@@ -12,65 +31,64 @@ all: git zsh neovim ssh ghostty herdr mise starship claude ## Install all dotfil
 
 git: ## Install git config
 	@echo "Installing git config..."
-	@ln -sf $(DOTFILES)/git/gitconfig ~/.gitconfig
-	@ln -sf $(DOTFILES)/git/gitignore_global ~/.gitignore_global
+	$(call link,$(DOTFILES)/git/gitconfig,$(HOME)/.gitconfig)
+	$(call link,$(DOTFILES)/git/gitignore_global,$(HOME)/.gitignore_global)
 	@echo "Git config installed"
 
 zsh: ## Install zsh config
 	@echo "Installing zsh config..."
-	@ln -sf $(DOTFILES)/zsh/zshrc ~/.zshrc
+	$(call link,$(DOTFILES)/zsh/zshrc,$(HOME)/.zshrc)
 	@mkdir -p ~/.config/sheldon
-	@ln -sf $(DOTFILES)/sheldon/plugins.toml ~/.config/sheldon/plugins.toml
+	$(call link,$(DOTFILES)/sheldon/plugins.toml,$(HOME)/.config/sheldon/plugins.toml)
 	@echo "Zsh config installed"
 
 neovim: ## Install neovim config
 	@echo "Installing neovim config..."
 	@mkdir -p ~/.config
-	@rm -rf ~/.config/nvim
-	@ln -sf $(DOTFILES)/neovim ~/.config/nvim
+	$(call link,$(DOTFILES)/neovim,$(HOME)/.config/nvim)
 	@echo "Neovim config installed"
 
 ssh: ## Install ssh config
 	@echo "Installing ssh config..."
 	@mkdir -p ~/.ssh
 	@chmod 700 ~/.ssh
-	@ln -sf $(DOTFILES)/ssh/config ~/.ssh/config
+	$(call link,$(DOTFILES)/ssh/config,$(HOME)/.ssh/config)
 	@echo "SSH config installed"
 	@echo "NOTE: Copy your SSH private key manually to ~/.ssh/github_tic40"
 
 ghostty: ## Install ghostty config
 	@echo "Installing ghostty config..."
 	@mkdir -p ~/.config/ghostty
-	@ln -sf $(DOTFILES)/ghostty/config ~/.config/ghostty/config
+	$(call link,$(DOTFILES)/ghostty/config,$(HOME)/.config/ghostty/config)
 	@echo "Ghostty config installed"
 
 herdr: ## Install herdr config
 	@echo "Installing herdr config..."
 	@mkdir -p ~/.config/herdr
-	@ln -sf $(DOTFILES)/herdr/config.toml ~/.config/herdr/config.toml
+	$(call link,$(DOTFILES)/herdr/config.toml,$(HOME)/.config/herdr/config.toml)
 	@echo "Herdr config installed"
 
 mise: ## Install mise config
 	@echo "Installing mise config..."
 	@mkdir -p ~/.config/mise
-	@ln -sf $(DOTFILES)/mise/config.toml ~/.config/mise/config.toml
-	@ln -sf $(DOTFILES)/mise/default-gems ~/.default-gems
+	$(call link,$(DOTFILES)/mise/config.toml,$(HOME)/.config/mise/config.toml)
+	$(call link,$(DOTFILES)/mise/default-gems,$(HOME)/.default-gems)
 	@echo "Mise config installed"
 
 starship: ## Install starship config
 	@echo "Installing starship config..."
-	@ln -sf $(DOTFILES)/starship/starship.toml ~/.config/starship.toml
+	@mkdir -p ~/.config
+	$(call link,$(DOTFILES)/starship/starship.toml,$(HOME)/.config/starship.toml)
 	@echo "Starship config installed"
 
 claude: ## Install Claude Code config
 	@echo "Installing Claude Code config..."
 	@mkdir -p ~/.claude
-	@ln -sf $(DOTFILES)/claude/CLAUDE.md ~/.claude/CLAUDE.md
-	@ln -sf $(DOTFILES)/claude/settings.json ~/.claude/settings.json
-	@rm -rf ~/.claude/rules
-	@ln -sf $(DOTFILES)/claude/rules ~/.claude/rules
-	@rm -rf ~/.claude/skills
-	@ln -sf $(DOTFILES)/claude/skills ~/.claude/skills
+	$(call link,$(DOTFILES)/claude/CLAUDE.md,$(HOME)/.claude/CLAUDE.md)
+	$(call link,$(DOTFILES)/claude/settings.json,$(HOME)/.claude/settings.json)
+	$(call link,$(DOTFILES)/claude/rules,$(HOME)/.claude/rules)
+	$(call link,$(DOTFILES)/claude/skills,$(HOME)/.claude/skills)
+	@if [ -L ~/.claude/commands ] && [ ! -e ~/.claude/commands ]; then rm ~/.claude/commands; echo "  removed dangling ~/.claude/commands"; fi
 	@echo "Registering user-scope MCP servers (tokens read from env at runtime)..."
 	@command -v claude >/dev/null 2>&1 && { \
 	  claude mcp remove -s user trello >/dev/null 2>&1 || true; \
@@ -79,21 +97,9 @@ claude: ## Install Claude Code config
 	} || echo "  claude CLI not found, skipped MCP registration"
 	@echo "Claude Code config installed"
 
-clean: ## Remove installed symlinks
+clean: ## Remove installed symlinks (real files are left untouched)
 	@echo "Removing symlinks..."
-	@rm -f ~/.gitconfig
-	@rm -f ~/.gitignore_global
-	@rm -f ~/.zshrc
-	@rm -f ~/.config/sheldon/plugins.toml
-	@rm -rf ~/.config/nvim
-	@rm -f ~/.ssh/config
-	@rm -f ~/.config/ghostty/config
-	@rm -f ~/.config/herdr/config.toml
-	@rm -f ~/.config/mise/config.toml
-	@rm -f ~/.default-gems
-	@rm -f ~/.config/starship.toml
-	@rm -f ~/.claude/CLAUDE.md
-	@rm -f ~/.claude/settings.json
-	@rm -rf ~/.claude/rules
-	@rm -rf ~/.claude/skills
+	@for f in $(LINKS); do \
+	  if [ -L "$$f" ]; then rm "$$f"; elif [ -e "$$f" ]; then echo "  skipped (not a symlink): $$f"; fi; \
+	done
 	@echo "Clean complete"
