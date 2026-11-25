@@ -1,15 +1,18 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm run:*)",
-      "Bash(npm test:*)",
+      "Bash(pnpm run:*)",
+      "Bash(pnpm test:*)",
       "Bash(git status:*)",
       "Bash(git diff:*)",
       "Bash(git log:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)",
-      "Bash(gh pr:*)",
-      "Bash(gh issue:*)"
+      "Bash(gh pr view:*)",
+      "Bash(gh pr list:*)",
+      "Bash(gh pr diff:*)",
+      "Bash(gh pr checks:*)",
+      "Bash(gh issue view:*)",
+      "Bash(gh issue list:*)"
     ],
     "defaultMode": "acceptEdits"
   },
