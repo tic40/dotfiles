@@ -7,3 +7,6 @@ ssh/id_*
 # Local overrides
 *.local
 *.local.*
+
+# Claude Code org-synced skills (written into ~/.claude/skills -> this repo)
+claude/skills/synced/
