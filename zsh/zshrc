@@ -23,16 +23,13 @@ GCCAC="g++ -std=gnu++2b -O2 -Wall -Wextra -I ${REPO}/tic40/atcoder/libraries/ac-
 
 alias vi='nvim'
 alias vim='nvim'
-alias ls='ls -G'
-alias ll='ls -alGh'
+alias ll='eza -la --git --icons'
 alias gccac="${GCCAC}"
 alias gccace="${GCCAC} && ./a.out"
 alias runtest="${REPO}/tic40/atcoder/scripts/runTest.sh"
 alias hd='herdr'
 
 alias repo="cd \$(ghq list -p | fzf)"
-alias poc-note="cd ${REPO}/pocake/note"
-
 unset REPO GCCAC
 
 alias ghreview='gh pr list --search "review-requested:@me"'
@@ -69,8 +66,11 @@ export PNPM_HOME="$HOME/Library/pnpm"
 export PATH="$PNPM_HOME/bin:$PATH"
 # starship
 eval "$(starship init zsh)"
+# zoxide (must be after other prompt/chpwd hooks)
+eval "$(zoxide init zsh)"
 
 export EDITOR=nvim
+export CLICOLOR=1
 
 # Load local config (secrets, machine-specific settings)
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
