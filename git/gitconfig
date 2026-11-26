@@ -3,8 +3,8 @@
   email = ccpzjoh@gmail.com
 [alias]
   br = branch
-  brc = branch --show-current
   bra = branch -a
+  brc = branch --show-current
   brr = branch -r
   c-rank = shortlog -sn --no-merges
   c-rank-month = "!git shortlog -sn --no-merges --after=\"$(date +%Y/%m/01)\" --before=\"$(date +%Y/%m/%d)\""
@@ -16,6 +16,7 @@
   df = diff
   dfc = diff --color-words
   fe = fetch
+  fp = !git fetch && git pull
   info = remote show origin
   l = log --date=short --pretty=format:'%C(yellow)%h %Cgreen%cd %Cblue%cn %Creset%s'
   lone = log --oneline
