@@ -48,6 +48,7 @@ make ghostty   # ~/.config/ghostty/
 make herdr     # ~/.config/herdr/config.toml
 make mise      # ~/.config/mise/
 make starship  # ~/.config/starship.toml
+make macos     # Apply macOS defaults (keyboard, Finder, Dock, battery %)
 make claude    # ~/.claude/
 ```
 

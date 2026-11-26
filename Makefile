@@ -1,4 +1,4 @@
-.PHONY: help install all git zsh neovim ssh ghostty herdr mise starship claude clean
+.PHONY: help install all git zsh neovim ssh ghostty herdr mise starship claude macos clean
 
 DOTFILES := $(CURDIR)
 
@@ -96,6 +96,9 @@ claude: ## Install Claude Code config
 	  echo "  trello registered (set TRELLO_API_KEY / TRELLO_TOKEN in ~/.zshrc.local)"; \
 	} || echo "  claude CLI not found, skipped MCP registration"
 	@echo "Claude Code config installed"
+
+macos: ## Apply macOS defaults (not included in all)
+	@bash $(DOTFILES)/macos/defaults.sh
 
 clean: ## Remove installed symlinks (real files are left untouched)
 	@echo "Removing symlinks..."
