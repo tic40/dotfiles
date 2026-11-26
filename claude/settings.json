@@ -14,7 +14,7 @@
       "Bash(gh issue view:*)",
       "Bash(gh issue list:*)"
     ],
-    "defaultMode": "acceptEdits"
+    "defaultMode": "auto"
   },
   "enabledPlugins": {
     "codex@openai-codex": true,
