@@ -3,5 +3,6 @@ idiomatic_version_file_enable_tools = ["node", "ruby"]
 
 [tools]
 node = "latest"
+pnpm = "latest"
 ruby = "latest"
 uv = "latest"
