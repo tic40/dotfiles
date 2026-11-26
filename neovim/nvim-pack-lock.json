@@ -1,0 +1,42 @@
+{
+  "plugins": {
+    "blink.cmp": {
+      "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
+      "src": "https://github.com/saghen/blink.cmp",
+      "version": "1.0.0 - 2.0.0"
+    },
+    "fzf-lua": {
+      "rev": "a3b5e6bebcc604d0286fffa1c4eb05b066a2a198",
+      "src": "https://github.com/ibhagwan/fzf-lua"
+    },
+    "indent-blankline.nvim": {
+      "rev": "fbc6d88222b5f75613cb95a22e89aa2f4e318a81",
+      "src": "https://github.com/lukas-reineke/indent-blankline.nvim"
+    },
+    "nvim-lspconfig": {
+      "rev": "76f4cafc49677a34dc8ad8142b773d78ab4a041e",
+      "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "nvim-tree.lua": {
+      "rev": "ba85443ca5fe92290dcc073e0100c1908ddde634",
+      "src": "https://github.com/nvim-tree/nvim-tree.lua"
+    },
+    "nvim-treesitter": {
+      "rev": "52773f0d13a0c11d0c3ef33c14ab6ecc1c17148b",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter",
+      "version": "'main'"
+    },
+    "nvim-web-devicons": {
+      "rev": "0dc0cfb0c6858041174a53c7aa4adaf65e994b3c",
+      "src": "https://github.com/nvim-tree/nvim-web-devicons"
+    },
+    "vim-fugitive": {
+      "rev": "3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0",
+      "src": "https://github.com/tpope/vim-fugitive"
+    },
+    "vscode.nvim": {
+      "rev": "6439ed89d0e10193f07e92268a321d7c6f6e93ee",
+      "src": "https://github.com/Mofiqul/vscode.nvim"
+    }
+  }
+}
