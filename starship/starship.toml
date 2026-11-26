@@ -1,5 +1,6 @@
 format = "$directory$git_branch$git_status$time $character"
 add_newline = false
+command_timeout = 1000
 
 [git_branch]
 format = "[$symbol$branch]($style) "
