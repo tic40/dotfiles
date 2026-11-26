@@ -6,19 +6,16 @@
   brc = branch --show-current
   bra = branch -a
   brr = branch -r
-  c = commit
   c-rank = shortlog -sn --no-merges
   c-rank-month = "!git shortlog -sn --no-merges --after=\"$(date +%Y/%m/01)\" --before=\"$(date +%Y/%m/%d)\""
   cm = commit -m
   cma = commit --amend
   cme = commit --allow-empty -m
   co = checkout
-  cob = checkout -b
-  conf = config --list
+  conf = config list
   df = diff
   dfc = diff --color-words
   fe = fetch
-  fp = !git fetch && git pull
   info = remote show origin
   l = log --date=short --pretty=format:'%C(yellow)%h %Cgreen%cd %Cblue%cn %Creset%s'
   lone = log --oneline
@@ -26,14 +23,7 @@
   lsd = ls-files --deleted
   lsm = ls-files --modified
   pushf = push --force-with-lease
-  r = reset
-  re = restore
-  rh = reset --hard
-  rhh = reset --hard HEAD
-  rl = reflog show
   rmall = "!git ls-files -dz | xargs -0 git rm --"
-  rs = reset --soft
-  rsh = reset --soft HEAD
   st = status
   sw = switch
 [core]
@@ -41,21 +31,40 @@
   quotepath = false
   editor = nvim
   whitespace = cr-at-eol
-[pull]
-  ff = only
+  fsmonitor = true
+  untrackedCache = true
 [init]
   defaultBranch = main
+[column]
+  ui = auto
+[branch]
+  sort = -committerdate
+[tag]
+  sort = version:refname
+[commit]
+  verbose = true
+[pull]
+  ff = only
 [push]
   autoSetupRemote = true
+  followTags = true
 [fetch]
   prune = true
+  pruneTags = true
 [rebase]
   autoStash = true
+  autoSquash = true
+  updateRefs = true
 [merge]
-  conflictstyle = zdiff3
+  conflictStyle = zdiff3
 [diff]
   algorithm = histogram
+  colorMoved = plain
+  mnemonicPrefix = true
 [rerere]
   enabled = true
+  autoUpdate = true
+[help]
+  autocorrect = prompt
 [include]
   path = ~/.gitconfig.local
