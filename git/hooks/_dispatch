@@ -1,0 +1,20 @@
+#!/bin/sh
+# Global hooks (core.hooksPath): scan staged changes for secrets, then run the repo's own .git/hooks/<name>.
+hook=$(basename "$0")
+
+if [ "$hook" = pre-commit ]; then
+  if command -v gitleaks >/dev/null 2>&1; then
+    gitleaks git --pre-commit --staged --redact --no-banner --log-level warn --verbose || {
+      echo "gitleaks: secrets detected. Fix them, or bypass with 'git commit --no-verify'." >&2
+      exit 1
+    }
+  else
+    echo "warning: gitleaks not found; skipping secret scan" >&2
+  fi
+fi
+
+local_hook="$(git rev-parse --git-common-dir)/hooks/$hook"
+if [ -x "$local_hook" ]; then
+  exec "$local_hook" "$@"
+fi
+exit 0

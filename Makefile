@@ -11,7 +11,7 @@ define link
 endef
 
 LINKS := \
-  ~/.gitconfig ~/.gitignore_global \
+  ~/.gitconfig ~/.gitignore_global ~/.config/git/hooks \
   ~/.zshrc ~/.config/sheldon/plugins.toml \
   ~/.config/nvim \
   ~/.ssh/config \
@@ -33,6 +33,8 @@ git: ## Install git config
 	@echo "Installing git config..."
 	$(call link,$(DOTFILES)/git/gitconfig,$(HOME)/.gitconfig)
 	$(call link,$(DOTFILES)/git/gitignore_global,$(HOME)/.gitignore_global)
+	@mkdir -p ~/.config/git
+	$(call link,$(DOTFILES)/git/hooks,$(HOME)/.config/git/hooks)
 	@echo "Git config installed"
 
 zsh: ## Install zsh config

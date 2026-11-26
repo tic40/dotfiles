@@ -31,6 +31,7 @@
   quotepath = false
   editor = nvim
   whitespace = cr-at-eol
+  hooksPath = ~/.config/git/hooks
   fsmonitor = true
   untrackedCache = true
 [init]
