@@ -19,7 +19,7 @@ LINKS := \
   ~/.config/herdr/config.toml \
   ~/.config/mise/config.toml ~/.default-gems \
   ~/.config/starship.toml \
-  ~/.claude/CLAUDE.md ~/.claude/settings.json ~/.claude/rules ~/.claude/skills ~/.claude/commands
+  ~/.claude/CLAUDE.md ~/.claude/settings.json ~/.claude/rules ~/.claude/skills
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-15s\033[0m %s\n", $$1, $$2}'
@@ -88,7 +88,6 @@ claude: ## Install Claude Code config
 	$(call link,$(DOTFILES)/claude/settings.json,$(HOME)/.claude/settings.json)
 	$(call link,$(DOTFILES)/claude/rules,$(HOME)/.claude/rules)
 	$(call link,$(DOTFILES)/claude/skills,$(HOME)/.claude/skills)
-	@if [ -L ~/.claude/commands ] && [ ! -e ~/.claude/commands ]; then rm ~/.claude/commands; echo "  removed dangling ~/.claude/commands"; fi
 	@echo "Registering user-scope MCP servers (tokens read from env at runtime)..."
 	@command -v claude >/dev/null 2>&1 && { \
 	  claude mcp remove -s user trello >/dev/null 2>&1 || true; \
