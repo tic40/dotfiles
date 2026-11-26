@@ -33,10 +33,20 @@ vim.opt.undofile = true
 -- IME
 vim.opt.imsearch = 0
 
+vim.diagnostic.config({
+  virtual_text = true,
+  severity_sort = true,
+})
+
 -- Remove trailing whitespace on save
+local keep_trailing_ws = { markdown = true, diff = true, gitsendemail = true }
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*",
-  command = [[%s/\s\+$//e]],
+  callback = function(args)
+    if keep_trailing_ws[vim.bo[args.buf].filetype] or not vim.bo[args.buf].modifiable then return end
+    local view = vim.fn.winsaveview()
+    vim.cmd([[keeppatterns keepjumps %s/\s\+$//e]])
+    vim.fn.winrestview(view)
+  end,
 })
 
 -- Remember last cursor position
