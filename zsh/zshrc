@@ -1,5 +1,8 @@
 typeset -U PATH path FPATH fpath
 
+# Homebrew (put brew paths before /usr/bin)
+[ -x /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # sheldon (adds plugin completions to fpath, so must be before compinit)
 eval "$(sheldon source)"
 
