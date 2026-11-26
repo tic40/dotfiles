@@ -14,7 +14,7 @@ Personal dotfiles for macOS development environment.
 |------|-------------|
 | Git | Version control config and aliases |
 | Zsh | Shell config with sheldon plugins |
-| Neovim | Editor with Treesitter, completion and plugins |
+| Neovim | Editor with built-in `vim.pack`, Treesitter, blink.cmp and fzf-lua |
 | Ghostty | Terminal emulator |
 | Herdr | Terminal workspace manager for AI coding agents |
 | Starship | Shell prompt |
@@ -51,6 +51,19 @@ make starship  # ~/.config/starship.toml
 make macos     # Apply macOS defaults (keyboard, Finder, Dock, battery %)
 make claude    # ~/.claude/
 ```
+
+## Neovim plugins
+
+Plugins are managed by the built-in `vim.pack` (Neovim 0.12+) and declared in
+`neovim/lua/plugins.lua`. Revisions are pinned in `neovim/nvim-pack-lock.json`;
+missing plugins are installed at those revisions on first launch.
+
+```vim
+:lua vim.pack.update()   " review updates, then :write to apply or :quit to cancel
+:lua vim.pack.del({ 'name' })   " remove a plugin after deleting it from plugins.lua
+```
+
+Commit `nvim-pack-lock.json` after updating.
 
 ## SSH setup
 
