@@ -1,3 +1,5 @@
+typeset -U PATH path FPATH fpath
+
 # sheldon (adds plugin completions to fpath, so must be before compinit)
 eval "$(sheldon source)"
 
@@ -43,9 +45,6 @@ alias speed='networkQuality'
 alias ipe='curl ipinfo.io/ip'
 alias ipi='ipconfig getifaddr en0'
 alias big10='du -sh ./* | sort -hr | head -n 10'
-alias vil='nvim "$(ls | sort | tail -1)"'
-alias char100='for i in {1..100}; do echo -n 'a'; done'
-alias fizzbuzz='for i in {1..100}; do ([ $((i%15)) = 0 ] && echo 'fizzbuzz') || ([ $((i%3)) = 0 ] && echo 'fizz') || ([ $((i%5)) = 0 ] && echo 'buzz') || echo $i; done'
 alias wcnt='wc -m'
 
 # Downloads の test<数字> ファイルをカレントディレクトリに移動する
