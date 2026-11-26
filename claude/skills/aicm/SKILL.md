@@ -1,6 +1,6 @@
 ---
 name: aicm
-description: Generate a one-line English commit message from currently staged changes and commit. Replaces the `git aicm` shell alias (which used metered `claude -p`) by running inside Claude Code instead. Use when the user invokes /aicm, or asks to "stage からコミット", "コミットメッセージを生成してコミット", "generate a commit message and commit", or similar after staging changes with `git add`.
+description: Generate a one-line `<type>: <English message>` commit message from currently staged changes and commit. Replaces the `git aicm` shell alias (which used metered `claude -p`) by running inside Claude Code instead. Use when the user invokes /aicm, or asks to "stage からコミット", "コミットメッセージを生成してコミット", "generate a commit message and commit", or similar after staging changes with `git add`.
 ---
 
 # aicm
@@ -14,11 +14,28 @@ Generate a one-line commit message from the staged diff and commit, without usin
    git diff --cached
    ```
 2. If the diff is empty, tell the user nothing is staged (`git add` first) and stop. Do NOT stage files automatically.
-3. Generate **exactly one line** as the commit message:
-   - English, imperative mood (e.g. "Add", "Fix", "Refactor", not "Added"/"Adds")
+3. Generate **exactly one line** as the commit message in the form `<type>: <message>`:
+   - `<type>` is one of:
+
+     | Type | Use for |
+     |---|---|
+     | `feat` | New feature |
+     | `fix` | Bug fix |
+     | `hotfix` | Urgent production fix |
+     | `chore` | Config, dependency updates, misc maintenance |
+     | `refactor` | Restructuring without behavior change |
+     | `style` | Formatting / lint only |
+     | `docs` | Documentation only |
+     | `test` | Test code only |
+     | `perf` | Performance improvement |
+     | `migration` | DB migration |
+
+   - No scope (`feat: ...`, not `feat(api): ...`) and no `!` breaking-change marker
+   - `<message>`: English, imperative mood, lowercase first letter (e.g. "add", "fix", not "Added"/"Adds")
    - Summarize **what** changed and **why** in a single summary line
    - No body, no explanation, no trailing period, no markdown, no quotes
    - Keep it concise (~72 chars target)
+   - Example: `fix: prevent duplicate email notifications on plan change`
 4. Show the generated message to the user, then commit:
    ```bash
    git commit -m "<message>"
