@@ -13,7 +13,6 @@
   df = diff
   dfc = diff --color-words
   fe = fetch
-  fpa = !ghq list | ghq get --update --parallel
   lone = log --date=short --pretty=format:'%C(yellow)%h %Cgreen%cd %Cblue%cn %Creset%s'
   ls = ls-files
   lsd = ls-files --deleted
@@ -24,6 +23,7 @@
   st = status
   sw = switch
   up = pull
+  upa = !ghq list | ghq get --update --parallel
 [core]
   excludesfile = ~/.gitignore_global
   quotepath = false
