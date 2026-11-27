@@ -6,27 +6,24 @@
   bra = branch -a
   brc = branch --show-current
   brr = branch -r
-  c-rank = shortlog -sn --no-merges
-  c-rank-month = "!git shortlog -sn --no-merges --after=\"$(date +%Y/%m/01)\" --before=\"$(date +%Y/%m/%d)\""
   cm = commit -m
   cma = commit --amend
   cme = commit --allow-empty -m
   co = checkout
-  conf = config list
   df = diff
   dfc = diff --color-words
   fe = fetch
   fpa = !ghq list | ghq get --update --parallel
-  info = remote show origin
-  l = log --date=short --pretty=format:'%C(yellow)%h %Cgreen%cd %Cblue%cn %Creset%s'
-  lone = log --oneline
+  lone = log --date=short --pretty=format:'%C(yellow)%h %Cgreen%cd %Cblue%cn %Creset%s'
   ls = ls-files
   lsd = ls-files --deleted
   lsm = ls-files --modified
-  pushf = push --force-with-lease
-  rmall = "!git ls-files -dz | xargs -0 git rm --"
+  pushf = push --force-with-lease --force-if-includes
+  rank = shortlog -sn --no-merges HEAD
+  rank-month = "!git shortlog -sn --no-merges --since=\"$(date +%Y-%m-01) 00:00\" HEAD"
   st = status
   sw = switch
+  up = pull
 [core]
   excludesfile = ~/.gitignore_global
   quotepath = false
