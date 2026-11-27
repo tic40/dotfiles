@@ -19,7 +19,7 @@ LINKS := \
   ~/.config/herdr/config.toml \
   ~/.config/mise/config.toml ~/.default-gems \
   ~/.config/starship.toml \
-  ~/.claude/CLAUDE.md ~/.claude/settings.json ~/.claude/rules ~/.claude/skills
+  ~/.claude/CLAUDE.md ~/.claude/settings.json ~/.claude/skills
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-15s\033[0m %s\n", $$1, $$2}'
@@ -88,7 +88,6 @@ claude: ## Install Claude Code config
 	@mkdir -p ~/.claude
 	$(call link,$(DOTFILES)/claude/CLAUDE.md,$(HOME)/.claude/CLAUDE.md)
 	$(call link,$(DOTFILES)/claude/settings.json,$(HOME)/.claude/settings.json)
-	$(call link,$(DOTFILES)/claude/rules,$(HOME)/.claude/rules)
 	$(call link,$(DOTFILES)/claude/skills,$(HOME)/.claude/skills)
 	@echo "Registering user-scope MCP servers (tokens read from env at runtime)..."
 	@command -v claude >/dev/null 2>&1 && { \
