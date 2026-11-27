@@ -12,7 +12,7 @@ Personal dotfiles for macOS development environment.
 
 | Tool | Description |
 |------|-------------|
-| Git | Version control config and aliases |
+| Git | Version control config, aliases and global hooks (gitleaks secret scan) |
 | Zsh | Shell config with sheldon plugins |
 | Neovim | Editor with built-in `vim.pack`, Treesitter, blink.cmp and fzf-lua |
 | Ghostty | Terminal emulator |
@@ -20,12 +20,15 @@ Personal dotfiles for macOS development environment.
 | Starship | Shell prompt |
 | Mise | Runtime version manager |
 | Claude Code | AI assistant config |
+| SSH | GitHub SSH config |
+| macOS | System defaults (keyboard, Finder, Dock) |
 
 ## Install
 
 ```bash
 git clone https://github.com/tic40/dotfiles ~/ghq/github.com/tic40/dotfiles
 cd ~/ghq/github.com/tic40/dotfiles
+make brew     # Install CLI tools and apps from Brewfile
 make install
 ```
 
@@ -33,6 +36,7 @@ make install
 
 ```bash
 make help     # Show all commands
+make brew     # Install Homebrew packages (Brewfile)
 make install  # Install all dotfiles
 make clean    # Remove installed symlinks
 ```
@@ -40,7 +44,7 @@ make clean    # Remove installed symlinks
 ## Individual install
 
 ```bash
-make git       # ~/.gitconfig, ~/.gitignore_global
+make git       # ~/.gitconfig, ~/.gitignore_global, ~/.config/git/hooks (gitleaks pre-commit)
 make zsh       # ~/.zshrc, ~/.config/sheldon/plugins.toml
 make neovim    # ~/.config/nvim/
 make ssh       # ~/.ssh/config
@@ -49,7 +53,7 @@ make herdr     # ~/.config/herdr/config.toml
 make mise      # ~/.config/mise/
 make starship  # ~/.config/starship.toml
 make macos     # Apply macOS defaults (keyboard, Finder, Dock, battery %)
-make claude    # ~/.claude/
+make claude    # ~/.claude/{CLAUDE.md,settings.json,skills}, register trello MCP
 ```
 
 ## Neovim plugins
