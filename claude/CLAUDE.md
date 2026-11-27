@@ -22,6 +22,6 @@
 
 - Repositories managed with ghq (~/ghq/github.com/owner/repo format)
 - Find repo paths with `ghq list -p`
-- Runtimes managed by mise (node / ruby, both `latest`)
+- Runtimes and tools managed by mise (node / ruby / pnpm / uv, all `latest`)
 - Node projects use pnpm
 - If a repo contains AGENTS.md, read it alongside CLAUDE.md
