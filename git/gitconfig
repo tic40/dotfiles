@@ -17,6 +17,7 @@
   dfc = diff --color-words
   fe = fetch
   fp = !git fetch && git pull
+  fpa = !ghq list | ghq get --update --parallel
   info = remote show origin
   l = log --date=short --pretty=format:'%C(yellow)%h %Cgreen%cd %Cblue%cn %Creset%s'
   lone = log --oneline
