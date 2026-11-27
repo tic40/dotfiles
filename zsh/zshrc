@@ -57,6 +57,15 @@ movetest() {
 
 mkcd() { mkdir -p -- "$1" && cd -- "$1" }
 
+# herdr の SSH_AUTH_SOCK はシンボリックリンクで bind mount できないため、OrbStack の転送ソケットを使う
+docker() {
+  if [[ $1 == compose ]]; then
+    SSH_AUTH_SOCK=/run/host-services/ssh-auth.sock command docker "$@"
+  else
+    command docker "$@"
+  fi
+}
+
 # mise
 eval "$(mise activate zsh)"
 # atuin
